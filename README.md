@@ -8,7 +8,7 @@
 
 ## Description
 
-<img src="https://raw.githubusercontent.com/hyperoslo/Brick/master/Images/icon.png" alt="Brick Icon" align="right" />
+<img src="https://raw.githubusercontent.com/hyperoslo/Brick/master/Images/icon_v2.png" alt="Brick Icon" align="right" />
 
 Brick is a generic view model for both basic and complex scenarios.
 Mapping a basic table view cells is as easy as pie, if you have more properties, you can use the `meta` dictionary to add all additional properties that you might need. It also supports relations so that you can nest view models inside of view models.
