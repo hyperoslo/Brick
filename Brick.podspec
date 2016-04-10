@@ -22,5 +22,5 @@ Pod::Spec.new do |s|
   # s.osx.frameworks = 'Cocoa', 'Foundation'
 
   s.dependency 'Sugar', '~> 1.0'
-  s.dependency 'Tailor', '~> 1.0'
+  s.dependency 'Tailor'
 end
