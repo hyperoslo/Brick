@@ -13,6 +13,8 @@
 		BD6D7ADE1CBA754900FBF0BD /* Tailor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD6D7ADC1CBA754900FBF0BD /* Tailor.framework */; };
 		BD6D7AE01CBA768200FBF0BD /* Fakery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD6D7ADF1CBA768200FBF0BD /* Fakery.framework */; };
 		BD6D7AE21CBA768A00FBF0BD /* Fakery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD6D7AE11CBA768A00FBF0BD /* Fakery.framework */; };
+		BDDA5FEB1CBBCF45000FD5A6 /* ViewConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDA5FEA1CBBCF45000FD5A6 /* ViewConfigurable.swift */; };
+		BDDA5FEC1CBBCF45000FD5A6 /* ViewConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDA5FEA1CBBCF45000FD5A6 /* ViewConfigurable.swift */; };
 		D5B2E8AA1C3A780C00C0327D /* Brick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5B2E89F1C3A780C00C0327D /* Brick.framework */; };
 		D5C6294A1C3A7FAA007F7B7C /* Brick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C629401C3A7FAA007F7B7C /* Brick.framework */; };
 		D5C629771C3A878E007F7B7C /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C629751C3A878E007F7B7C /* Quick.framework */; };
@@ -49,6 +51,7 @@
 		BD6D7ADC1CBA754900FBF0BD /* Tailor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Tailor.framework; path = Carthage/Build/Mac/Tailor.framework; sourceTree = "<group>"; };
 		BD6D7ADF1CBA768200FBF0BD /* Fakery.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fakery.framework; path = Carthage/Build/Mac/Fakery.framework; sourceTree = "<group>"; };
 		BD6D7AE11CBA768A00FBF0BD /* Fakery.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fakery.framework; path = Carthage/Build/iOS/Fakery.framework; sourceTree = "<group>"; };
+		BDDA5FEA1CBBCF45000FD5A6 /* ViewConfigurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewConfigurable.swift; sourceTree = "<group>"; };
 		D500FD111C3AABED00782D78 /* Playground-iOS.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Playground-iOS.playground"; sourceTree = "<group>"; };
 		D500FD121C3AAC8E00782D78 /* Playground-Mac.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Playground-Mac.playground"; sourceTree = "<group>"; };
 		D5B2E89F1C3A780C00C0327D /* Brick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Brick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				D5C629861C3A89A8007F7B7C /* ViewModel.swift */,
+				BDDA5FEA1CBBCF45000FD5A6 /* ViewConfigurable.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -463,6 +467,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5C629871C3A89A8007F7B7C /* ViewModel.swift in Sources */,
+				BDDA5FEB1CBBCF45000FD5A6 /* ViewConfigurable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +484,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5C629881C3A89A8007F7B7C /* ViewModel.swift in Sources */,
+				BDDA5FEC1CBBCF45000FD5A6 /* ViewConfigurable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
