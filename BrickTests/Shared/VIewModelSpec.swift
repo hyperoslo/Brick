@@ -72,6 +72,17 @@ class ViewModelSpec: QuickSpec {
           expect(viewModel.meta("domain", "")).to(equal(data["meta"]!["domain"]))
         }
       }
+      
+      describe("#update:kind") {
+        beforeEach {
+          viewModel = ViewModel(data)
+        }
+        
+        it("updates kind") {
+          viewModel.update(kind: "test")
+          expect(viewModel.kind).to(equal("test"))
+        }
+      }
     }
   }
 }
