@@ -59,7 +59,7 @@ public struct ViewModel: Mappable {
     self.relations = relations
   }
 
-  // MARK: - Meta
+  // MARK: - Helpers
 
   public func meta<T>(key: String, _ defaultValue: T) -> T {
     return meta[key] as? T ?? defaultValue
@@ -75,6 +75,10 @@ public struct ViewModel: Mappable {
     } else {
       return nil
     }
+  }
+  
+  public mutating func update(kind kind: StringConvertible) {
+    self.kind = kind.string
   }
 }
 
