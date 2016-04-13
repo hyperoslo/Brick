@@ -7,16 +7,22 @@
 import Tailor
 import Sugar
 
-public struct ViewModel: Mappable {
+public struct ViewModel: Mappable, KindConvertible {
   public var index = 0
   public var title = ""
   public var subtitle = ""
   public var image = ""
-  public var kind = ""
+  public var kind: KindConvertible = ""
   public var action: String?
   public var size = CGSize(width: 0, height: 0)
   public var meta = [String : AnyObject]()
   public var relations = [String : [ViewModel]]()
+
+  public var kindString: String {
+    return kind.kindString
+  }
+
+  // MARK: - Initialization
 
   public init(_ map: JSONDictionary) {
     title    <- map.property("title")
@@ -46,7 +52,7 @@ public struct ViewModel: Mappable {
     )
   }
 
-  public init(title: String = "", subtitle: String = "", image: String = "", kind: String = "", action: String? = nil, size: CGSize = CGSize(width: 0, height: 0), meta: JSONDictionary = [:], relations: [String : [ViewModel]] = [:]) {
+  public init(title: String = "", subtitle: String = "", image: String = "", kind: KindConvertible = "", action: String? = nil, size: CGSize = CGSize(width: 0, height: 0), meta: JSONDictionary = [:], relations: [String : [ViewModel]] = [:]) {
     self.title = title
     self.subtitle = subtitle
     self.image = image
@@ -56,6 +62,8 @@ public struct ViewModel: Mappable {
     self.meta = meta
     self.relations = relations
   }
+
+  // MARK: - Meta
 
   public func meta<T>(key: String, _ defaultValue: T) -> T {
     return meta[key] as? T ?? defaultValue
@@ -90,7 +98,7 @@ public func ==(lhs: ViewModel, rhs: ViewModel) -> Bool {
   let equal = lhs.title == rhs.title &&
     lhs.subtitle == rhs.subtitle &&
     lhs.image == rhs.image &&
-    lhs.kind == rhs.kind &&
+    lhs.kindString == rhs.kindString &&
     lhs.action == rhs.action &&
     (lhs.meta as NSDictionary).isEqual(rhs.meta as NSDictionary)
 
@@ -101,7 +109,7 @@ public func ===(lhs: ViewModel, rhs: ViewModel) -> Bool {
   let equal = lhs.title == rhs.title &&
     lhs.subtitle == rhs.subtitle &&
     lhs.image == rhs.image &&
-    lhs.kind == rhs.kind &&
+    lhs.kindString == rhs.kindString &&
     lhs.action == rhs.action &&
     lhs.size == rhs.size &&
     (lhs.meta as NSDictionary).isEqual(rhs.meta as NSDictionary)
