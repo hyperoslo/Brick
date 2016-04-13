@@ -7,7 +7,7 @@
 import Tailor
 import Sugar
 
-public struct ViewModel: Mappable {
+public struct ViewModel: Mappable, KindConvertible {
   public var index = 0
   public var title = ""
   public var subtitle = ""
