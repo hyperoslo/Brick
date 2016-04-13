@@ -17,7 +17,7 @@
 		BDDA5FEC1CBBCF45000FD5A6 /* ViewConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDA5FEA1CBBCF45000FD5A6 /* ViewConfigurable.swift */; };
 		D559C5B51CBE7DA100700B3C /* KindConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = D559C5B41CBE7DA100700B3C /* KindConvertible.swift */; };
 		D559C5B61CBE7DA100700B3C /* KindConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = D559C5B41CBE7DA100700B3C /* KindConvertible.swift */; };
-		D559C5B81CBE7DDE00700B3C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D559C5B71CBE7DDE00700B3C /* Extensions.swift */; };
+		D559C5BA1CBE912800700B3C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D559C5B91CBE912800700B3C /* Extensions.swift */; };
 		D5B2E8AA1C3A780C00C0327D /* Brick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5B2E89F1C3A780C00C0327D /* Brick.framework */; };
 		D5C6294A1C3A7FAA007F7B7C /* Brick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C629401C3A7FAA007F7B7C /* Brick.framework */; };
 		D5C629771C3A878E007F7B7C /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C629751C3A878E007F7B7C /* Quick.framework */; };
@@ -58,7 +58,7 @@
 		D500FD111C3AABED00782D78 /* Playground-iOS.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Playground-iOS.playground"; sourceTree = "<group>"; };
 		D500FD121C3AAC8E00782D78 /* Playground-Mac.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Playground-Mac.playground"; sourceTree = "<group>"; };
 		D559C5B41CBE7DA100700B3C /* KindConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KindConvertible.swift; sourceTree = "<group>"; };
-		D559C5B71CBE7DDE00700B3C /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Sources/Shared/Extensions.swift; sourceTree = SOURCE_ROOT; };
+		D559C5B91CBE912800700B3C /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D5B2E89F1C3A780C00C0327D /* Brick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Brick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5B2E8A91C3A780C00C0327D /* Brick-iOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Brick-iOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5C629401C3A7FAA007F7B7C /* Brick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Brick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -174,7 +174,7 @@
 		D5C6296A1C3A809D007F7B7C /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				D559C5B71CBE7DDE00700B3C /* Extensions.swift */,
+				D559C5B91CBE912800700B3C /* Extensions.swift */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -476,7 +476,7 @@
 				D559C5B51CBE7DA100700B3C /* KindConvertible.swift in Sources */,
 				D5C629871C3A89A8007F7B7C /* ViewModel.swift in Sources */,
 				BDDA5FEB1CBBCF45000FD5A6 /* ViewConfigurable.swift in Sources */,
-				D559C5B81CBE7DDE00700B3C /* Extensions.swift in Sources */,
+				D559C5BA1CBE912800700B3C /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
