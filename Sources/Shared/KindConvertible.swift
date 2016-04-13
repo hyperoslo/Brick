@@ -1,10 +1,10 @@
-public protocol KindConvertible {
-  var kindString: String { get }
+public protocol StringConvertible {
+  var string: String { get }
 }
 
-extension String: KindConvertible {
-
-  public var kindString: String {
+extension String: StringConvertible {
+  
+  public var string: String {
     return self
   }
 }
