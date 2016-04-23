@@ -1,4 +1,4 @@
-#if os(iOS)
+#if os(iOS) || os(watchOS) || os(tvOS)
   import UIKit
 #else
   import Foundation
@@ -76,7 +76,7 @@ public struct ViewModel: Mappable {
       return nil
     }
   }
-  
+
   public mutating func update(kind kind: StringConvertible) {
     self.kind = kind.string
   }
