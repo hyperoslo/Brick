@@ -1,3 +1,6 @@
+/**
+  A class protocol that requires configure(item: ViewModel), it can be applied to UI components to annotate that they are intended to use ViewModel.
+ */
 public protocol ViewConfigurable: class {
 
   /**
