@@ -12,6 +12,9 @@ import Sugar
 */
 public struct ViewModel: Mappable {
 
+  /**
+   An enum with all the string keys used in the view model
+  */
   public enum Key: String {
     case Index
     case Title
@@ -50,15 +53,35 @@ public struct ViewModel: Mappable {
   /// A key-value dictionary for related view models
   public var relations = [String : [ViewModel]]()
 
+  /// A dictionary representation of the view model
   public var dictionary: JSONDictionary {
-    return [
+    var dictionary: [String: AnyObject] = [
       Key.Index.string : index,
       Key.Title.string : title,
       Key.Subtitle.string : subtitle,
       Key.Image.string : image,
       Key.Kind.string : kind,
-      //Key.Action.string : action
+      Key.Meta.string : meta,
+      Key.Size.string : [
+        Key.Width.string : size.width,
+        Key.Height.string : size.height
+      ]
     ]
+
+    if let action = action {
+      dictionary[Key.Action] = action
+    }
+
+    var relationItems = [String : [JSONDictionary]]()
+
+    relations.forEach { key, array in
+      if relationItems[key] == nil { relationItems[key] = [JSONDictionary]() }
+      array.forEach { relationItems[key]?.append($0.dictionary) }
+    }
+
+    dictionary[Key.Relations.string] = relationItems
+
+    return dictionary
   }
 
   // MARK: - Initialization
