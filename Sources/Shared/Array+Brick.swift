@@ -1,4 +1,4 @@
-extension _ArrayType where Generator.Element == ViewModel {
+public extension _ArrayType where Generator.Element == ViewModel {
 
   mutating func refreshIndexes() {
     enumerate().forEach {
