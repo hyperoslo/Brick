@@ -3,7 +3,7 @@ import Quick
 import Nimble
 import Fakery
 
-class ArrayBrickSpec: QuickSpec {
+class ExtensionsSpec: QuickSpec {
 
   override func spec() {
     describe("Array+Brick") {

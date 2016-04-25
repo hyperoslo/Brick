@@ -72,12 +72,30 @@ class ViewModelSpec: QuickSpec {
           expect(viewModel.meta("domain", "")).to(equal(data["meta"]!["domain"]))
         }
       }
-      
+
+      describe("#dictionary") {
+        beforeEach {
+          data["relations"] = ["viewmodels" : [data, data]]
+          viewModel = ViewModel(data)
+        }
+
+        it("returns a dictionary representation of the view model") {
+          let newViewModel = ViewModel(viewModel.dictionary)
+
+          expect(newViewModel == viewModel).to(beTrue())
+          expect(newViewModel.relations["viewmodels"]!.count).to(equal(viewModel.relations["viewmodels"]!.count))
+          expect(newViewModel.relations["viewmodels"]!.first!
+            == viewModel.relations["viewmodels"]!.first!).to(beTrue())
+          expect(newViewModel.relations["viewmodels"]!.last!
+            == viewModel.relations["viewmodels"]!.last!).to(beTrue())
+        }
+      }
+
       describe("#update:kind") {
         beforeEach {
           viewModel = ViewModel(data)
         }
-        
+
         it("updates kind") {
           viewModel.update(kind: "test")
           expect(viewModel.kind).to(equal("test"))

@@ -69,7 +69,7 @@ public struct ViewModel: Mappable {
     ]
 
     if let action = action {
-      dictionary[Key.Action] = action
+      dictionary[Key.Action.string] = action
     }
 
     var relationItems = [String : [JSONDictionary]]()
