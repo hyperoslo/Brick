@@ -1,9 +1,8 @@
-//
-//  Array+Brick.swift
-//  Brick
-//
-//  Created by Vadym Markov on 25/04/16.
-//  Copyright © 2016 Hyper Interaktiv AS. All rights reserved.
-//
+extension _ArrayType where Generator.Element == ViewModel {
 
-import Foundation
+  mutating func refreshIndexes() {
+    enumerate().forEach {
+      self[$0.index].index = $0.index
+    }
+  }
+}
