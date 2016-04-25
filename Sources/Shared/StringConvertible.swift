@@ -11,6 +11,7 @@ public protocol StringConvertible {
 extension String: StringConvertible {
 
   /**
+   The required implementation for String to make it conform to StringConvertible
    - Returns: self as string
   */
   public var string: String {
