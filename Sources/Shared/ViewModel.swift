@@ -7,15 +7,27 @@
 import Tailor
 import Sugar
 
+/**
+ A value type struct, it conforms to the Mappable protocol so that it can be instantiated
+*/
 public struct ViewModel: Mappable {
+  // The index of the ViewModel when appearing in a list, should be computed and continuously updated by the data source
   public var index = 0
+  // The main representation of the ViewModel
   public var title = ""
+  // Supplementary information to the ViewModel
   public var subtitle = ""
+  // A visual representation of the ViewModel, usually a string URL or image name
   public var image = ""
+  // Determines what kind of UI should be used to represent the ViewModel
   public var kind: String = ""
+  // A string representation of what should happens when a ViewModel is tapped, usually a URN or URL
   public var action: String?
+  // The width and height of the view model, usually calculated and updated by the UI component
   public var size = CGSize(width: 0, height: 0)
+  // A key-value dictionary for any additional information
   public var meta = [String : AnyObject]()
+  // A key-value dictionary for related view models
   public var relations = [String : [ViewModel]]()
 
   // MARK: - Initialization
@@ -121,6 +133,9 @@ public struct ViewModel: Mappable {
 
 /**
  A collection of ViewModel Equatable implementation
+ - Parameter lhs: Left hand collection of ViewModels
+ - Parameter rhs: Right hand collection of ViewModels
+ - Returns: A boolean value, true if both ViewModel are equal
  */
 public func ==(lhs: [ViewModel], rhs: [ViewModel]) -> Bool {
   var equal = lhs.count == rhs.count
@@ -136,6 +151,9 @@ public func ==(lhs: [ViewModel], rhs: [ViewModel]) -> Bool {
 
 /**
  ViewModel Equatable implemetnation
+ - Parameter lhs: Left hand ViewModel
+ - Parameter rhs: Right hand ViewModel
+ - Returns: A boolean value, true if both ViewModel are equal
  */
 public func ==(lhs: ViewModel, rhs: ViewModel) -> Bool {
   let equal = lhs.title == rhs.title &&
@@ -150,6 +168,10 @@ public func ==(lhs: ViewModel, rhs: ViewModel) -> Bool {
 
 /**
  Check if ViewModel's are truly equal by including size in comparison
+
+ - Parameter lhs: Left hand ViewModel
+ - Parameter rhs: Right hand ViewModel
+ - Returns: A boolean value, true if both ViewModel are equal
  */
 public func ===(lhs: ViewModel, rhs: ViewModel) -> Bool {
   let equal = lhs.title == rhs.title &&
@@ -165,6 +187,9 @@ public func ===(lhs: ViewModel, rhs: ViewModel) -> Bool {
 
 /**
  A reverse Equatable implemetnation for comparing ViewModel's
+ - Parameter lhs: Left hand ViewModel
+ - Parameter rhs: Right hand ViewModel
+ - Returns: A boolean value, false if both ViewModel are equal
  */
 public func !=(lhs: ViewModel, rhs: ViewModel) -> Bool {
   return !(lhs == rhs)
