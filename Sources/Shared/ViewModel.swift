@@ -8,7 +8,7 @@ import Tailor
 import Sugar
 
 /**
- A value type struct, it conforms to the Mappable protocol so that it can be instantiated
+ A value type struct, it conforms to the Mappable protocol so that it can be instantiated with JSON
 */
 public struct ViewModel: Mappable {
   /// The index of the ViewModel when appearing in a list, should be computed and continuously updated by the data source
