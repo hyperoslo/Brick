@@ -11,23 +11,23 @@ import Sugar
  A value type struct, it conforms to the Mappable protocol so that it can be instantiated
 */
 public struct ViewModel: Mappable {
-  // The index of the ViewModel when appearing in a list, should be computed and continuously updated by the data source
+  /// The index of the ViewModel when appearing in a list, should be computed and continuously updated by the data source
   public var index = 0
-  // The main representation of the ViewModel
+  /// The main representation of the ViewModel
   public var title = ""
-  // Supplementary information to the ViewModel
+  /// Supplementary information to the ViewModel
   public var subtitle = ""
-  // A visual representation of the ViewModel, usually a string URL or image name
+  /// A visual representation of the ViewModel, usually a string URL or image name
   public var image = ""
-  // Determines what kind of UI should be used to represent the ViewModel
+  /// Determines what kind of UI should be used to represent the ViewModel
   public var kind: String = ""
-  // A string representation of what should happens when a ViewModel is tapped, usually a URN or URL
+  /// A string representation of what should happens when a ViewModel is tapped, usually a URN or URL
   public var action: String?
-  // The width and height of the view model, usually calculated and updated by the UI component
+  /// The width and height of the view model, usually calculated and updated by the UI component
   public var size = CGSize(width: 0, height: 0)
-  // A key-value dictionary for any additional information
+  /// A key-value dictionary for any additional information
   public var meta = [String : AnyObject]()
-  // A key-value dictionary for related view models
+  /// A key-value dictionary for related view models
   public var relations = [String : [ViewModel]]()
 
   // MARK: - Initialization
