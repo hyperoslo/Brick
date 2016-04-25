@@ -15,8 +15,8 @@
 		BD6D7AE21CBA768A00FBF0BD /* Fakery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD6D7AE11CBA768A00FBF0BD /* Fakery.framework */; };
 		BDDA5FEB1CBBCF45000FD5A6 /* ViewConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDA5FEA1CBBCF45000FD5A6 /* ViewConfigurable.swift */; };
 		BDDA5FEC1CBBCF45000FD5A6 /* ViewConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDA5FEA1CBBCF45000FD5A6 /* ViewConfigurable.swift */; };
-		D5ACAC9A1CCE439F00567809 /* Array+Brick.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ACAC991CCE439F00567809 /* Array+Brick.swift */; };
-		D5ACAC9B1CCE439F00567809 /* Array+Brick.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ACAC991CCE439F00567809 /* Array+Brick.swift */; };
+		D5ACAC9A1CCE439F00567809 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ACAC991CCE439F00567809 /* Extensions.swift */; };
+		D5ACAC9B1CCE439F00567809 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ACAC991CCE439F00567809 /* Extensions.swift */; };
 		D5ACAC9F1CCE45CE00567809 /* ArrayBrickSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ACAC9C1CCE449A00567809 /* ArrayBrickSpec.swift */; };
 		D5ACACA01CCE45CF00567809 /* ArrayBrickSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ACAC9C1CCE449A00567809 /* ArrayBrickSpec.swift */; };
 		D5B2E8AA1C3A780C00C0327D /* Brick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5B2E89F1C3A780C00C0327D /* Brick.framework */; };
@@ -60,7 +60,7 @@
 		BDDA5FEA1CBBCF45000FD5A6 /* ViewConfigurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewConfigurable.swift; sourceTree = "<group>"; };
 		D500FD111C3AABED00782D78 /* Playground-iOS.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Playground-iOS.playground"; sourceTree = "<group>"; };
 		D500FD121C3AAC8E00782D78 /* Playground-Mac.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Playground-Mac.playground"; sourceTree = "<group>"; };
-		D5ACAC991CCE439F00567809 /* Array+Brick.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Brick.swift"; sourceTree = "<group>"; };
+		D5ACAC991CCE439F00567809 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D5ACAC9C1CCE449A00567809 /* ArrayBrickSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayBrickSpec.swift; sourceTree = "<group>"; };
 		D5B2E89F1C3A780C00C0327D /* Brick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Brick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5B2E8A91C3A780C00C0327D /* Brick-iOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Brick-iOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,7 +170,7 @@
 				D5C629861C3A89A8007F7B7C /* ViewModel.swift */,
 				BDDA5FEA1CBBCF45000FD5A6 /* ViewConfigurable.swift */,
 				DAA38AA41CBEEAD900D48603 /* StringConvertible.swift */,
-				D5ACAC991CCE439F00567809 /* Array+Brick.swift */,
+				D5ACAC991CCE439F00567809 /* Extensions.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -471,7 +471,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5C629871C3A89A8007F7B7C /* ViewModel.swift in Sources */,
-				D5ACAC9A1CCE439F00567809 /* Array+Brick.swift in Sources */,
+				D5ACAC9A1CCE439F00567809 /* Extensions.swift in Sources */,
 				BDDA5FEB1CBBCF45000FD5A6 /* ViewConfigurable.swift in Sources */,
 				DAA38AA51CBEEAD900D48603 /* StringConvertible.swift in Sources */,
 			);
@@ -491,7 +491,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAA38AA61CBEEAD900D48603 /* StringConvertible.swift in Sources */,
-				D5ACAC9B1CCE439F00567809 /* Array+Brick.swift in Sources */,
+				D5ACAC9B1CCE439F00567809 /* Extensions.swift in Sources */,
 				D5C629881C3A89A8007F7B7C /* ViewModel.swift in Sources */,
 				BDDA5FEC1CBBCF45000FD5A6 /* ViewConfigurable.swift in Sources */,
 			);
