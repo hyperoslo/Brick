@@ -11,6 +11,26 @@ import Sugar
  A value type struct, it conforms to the Mappable protocol so that it can be instantiated with JSON
 */
 public struct ViewModel: Mappable {
+
+  public enum Key: String {
+    case Index
+    case Title
+    case Subtitle
+    case Image
+    case Type
+    case Kind
+    case Action
+    case Meta
+    case Relations
+    case Size
+    case Width
+    case Height
+
+    var string: String {
+      return rawValue.lowercaseString
+    }
+  }
+
   /// The index of the ViewModel when appearing in a list, should be computed and continuously updated by the data source
   public var index = 0
   /// The main representation of the ViewModel
@@ -30,6 +50,17 @@ public struct ViewModel: Mappable {
   /// A key-value dictionary for related view models
   public var relations = [String : [ViewModel]]()
 
+  public var dictionary: JSONDictionary {
+    return [
+      Key.Index.string : index,
+      Key.Title.string : title,
+      Key.Subtitle.string : subtitle,
+      Key.Image.string : image,
+      Key.Kind.string : kind,
+      //Key.Action.string : action
+    ]
+  }
+
   // MARK: - Initialization
 
   /**
@@ -38,18 +69,19 @@ public struct ViewModel: Mappable {
    - Parameter map: A JSON dictionary
   */
   public init(_ map: JSONDictionary) {
-    title    <- map.property("title")
-    subtitle <- map.property("subtitle")
-    image    <- map.property("image")
-    kind     <- map.property("type") ?? map.property("kind")
-    action   <- map.property("action")
-    meta     <- map.property("meta")
+    index    <- map.property(.Index)
+    title    <- map.property(.Title)
+    subtitle <- map.property(.Subtitle)
+    image    <- map.property(.Image)
+    kind     <- map.property(.Type) ?? map.property(.Kind)
+    action   <- map.property(.Action) ?? nil
+    meta     <- map.property(.Meta)
 
-    if let relation = map["relations"] as? [String : [ViewModel]] {
+    if let relation = map[.Relations] as? [String : [ViewModel]] {
       relations = relation
     }
 
-    if let relations = map["relations"] as? [String : [JSONDictionary]] {
+    if let relations = map[.Relations] as? [String : [JSONDictionary]] {
       var newRelations = [String : [ViewModel]]()
       relations.forEach { key, array in
         if newRelations[key] == nil { newRelations[key] = [ViewModel]() }
@@ -60,8 +92,8 @@ public struct ViewModel: Mappable {
     }
 
     size = CGSize(
-      width:  ((map["size"] as? JSONDictionary)?["width"] as? Int) ?? 0,
-      height: ((map["size"] as? JSONDictionary)?["height"] as? Int) ?? 0
+      width:  ((map[.Size] as? JSONDictionary)?[.Width] as? Int) ?? 0,
+      height: ((map[.Size] as? JSONDictionary)?[.Height] as? Int) ?? 0
     )
   }
 
