@@ -4,7 +4,7 @@ language: objective-c
 before_install:
 - brew update
 - if brew outdated | grep -qx carthage; then brew upgrade carthage; fi
-- travis_wait 35 carthage bootstrap
+- travis_wait 35 carthage bootstrap --platform iOS,Mac
 
 script:
 - xcodebuild clean build -project Brick.xcodeproj -scheme Brick-iOS -sdk iphonesimulator
