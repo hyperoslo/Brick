@@ -1,5 +1,28 @@
 # Change Log
 
+## [Unreleased](https://github.com/hyperoslo/Brick/tree/HEAD)
+
+[Full Changelog](https://github.com/hyperoslo/Brick/compare/0.6.1...HEAD)
+
+**Merged pull requests:**
+
+- Feature: dictionary representation of the view model [\#10](https://github.com/hyperoslo/Brick/pull/10) ([vadymmarkov](https://github.com/vadymmarkov))
+
+## [0.6.1](https://github.com/hyperoslo/Brick/tree/0.6.1) (2016-04-25)
+[Full Changelog](https://github.com/hyperoslo/Brick/compare/0.6.0...0.6.1)
+
+**Merged pull requests:**
+
+- Make array extension public [\#9](https://github.com/hyperoslo/Brick/pull/9) ([vadymmarkov](https://github.com/vadymmarkov))
+
+## [0.6.0](https://github.com/hyperoslo/Brick/tree/0.6.0) (2016-04-25)
+[Full Changelog](https://github.com/hyperoslo/Brick/compare/0.5.2...0.6.0)
+
+**Merged pull requests:**
+
+- Add CHANGELOG.md [\#8](https://github.com/hyperoslo/Brick/pull/8) ([zenangst](https://github.com/zenangst))
+- Feature: refresh indexes [\#7](https://github.com/hyperoslo/Brick/pull/7) ([vadymmarkov](https://github.com/vadymmarkov))
+
 ## [0.5.2](https://github.com/hyperoslo/Brick/tree/0.5.2) (2016-04-25)
 [Full Changelog](https://github.com/hyperoslo/Brick/compare/0.5.1...0.5.2)
 
