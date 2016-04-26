@@ -3,11 +3,11 @@ import Quick
 import Nimble
 import Fakery
 
-class ArrayBrickSpec: QuickSpec {
+class ExtensionsSpec: QuickSpec {
 
   override func spec() {
     describe("Array+Brick") {
-      var items =  [ViewModel]()
+      var items = [ViewModel]()
 
       beforeEach {
         for index in 0..<10 {
@@ -29,6 +29,25 @@ class ArrayBrickSpec: QuickSpec {
           for index in 0..<10 {
             expect(items[index].index).to(equal(index))
           }
+        }
+      }
+    }
+
+    describe("Dictionary+Brick") {
+      var items = [String: String]()
+
+      beforeEach {
+        items = ["title": "test"]
+      }
+
+      describe("#subscript") {
+        it("sets a proper value based on a string representation of a view model Key") {
+          items[.Subtitle] = "subtitle"
+          expect(items["subtitle"]).to(equal("subtitle"))
+        }
+
+        it("returns a proper value based on a string representation of a view model Key") {
+          expect(items[.Title]).to(equal("test"))
         }
       }
     }
