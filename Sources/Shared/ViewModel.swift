@@ -162,6 +162,10 @@ public struct ViewModel: Mappable {
     return meta[key] as? T
   }
 
+  public func metaInstance<T: Mappable>() -> T {
+    return T(meta)
+  }
+
   /**
    A convenience lookup method for resolving view model relations
 
