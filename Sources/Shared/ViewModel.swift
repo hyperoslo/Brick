@@ -181,6 +181,11 @@ public struct ViewModel: Mappable {
     return meta[key] as? T
   }
 
+  /**
+   A generic convenience method for resolving meta instance
+
+   - Returns: A generic meta instance based on `type`
+   */
   public func metaInstance<T: Mappable>() -> T {
     return T(meta)
   }
