@@ -149,8 +149,13 @@ public struct ViewModel: Mappable {
     var metaDictionary = JSONDictionary()
 
     for (key, item) in meta.properties() {
-      guard let value = item as? AnyObject else { continue }
-      metaDictionary[key] = value
+      if let value = item as? AnyObject {
+        metaDictionary[key] = value
+      } else if let value = Mirror(reflecting: item).descendant("Some") as? AnyObject {
+        metaDictionary[key] = value
+      } else {
+        continue
+      }
     }
 
     self.init(title: title, subtitle: subtitle, image: image, kind: kind, action: action,
