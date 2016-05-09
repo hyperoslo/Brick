@@ -1,9 +1,12 @@
 import Tailor
 import Sugar
 
-struct Meta: Mappable {
+struct Meta {
   var id = 0
-  var name: String?
+  var name: String? = ""
+}
+
+extension Meta: Mappable {
 
   init(_ map: JSONDictionary) {
     id <- map.property("id")

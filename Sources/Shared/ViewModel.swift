@@ -146,20 +146,8 @@ public struct ViewModel: Mappable {
    - Parameter image: Image name or URL as a string, default to empty string
    */
   public init(title: String = "", subtitle: String = "", image: String = "", kind: StringConvertible = "", action: String? = nil, size: CGSize = CGSize(width: 0, height: 0), meta: Mappable, relations: [String : [ViewModel]] = [:]) {
-    var metaDictionary = JSONDictionary()
-
-    for (key, item) in meta.properties() {
-      if let value = item as? AnyObject {
-        metaDictionary[key] = value
-      } else if let value = Mirror(reflecting: item).descendant("Some") as? AnyObject {
-        metaDictionary[key] = value
-      } else {
-        continue
-      }
-    }
-
     self.init(title: title, subtitle: subtitle, image: image, kind: kind, action: action,
-              size: size, meta: metaDictionary, relations: relations)
+              size: size, meta: meta.metaProperties, relations: relations)
   }
 
   // MARK: - Helpers
