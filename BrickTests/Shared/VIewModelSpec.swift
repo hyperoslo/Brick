@@ -78,6 +78,17 @@ class ViewModelSpec: QuickSpec {
         }
       }
 
+      describe("#metaInstance") {
+        it("resolves meta data created from object") {
+          var data = ["id": 11, "name": "Name"]
+          viewModel = ViewModel(meta: Meta(data))
+          let result: Meta = viewModel.metaInstance()
+
+          expect(result.id).to(equal(data["id"]))
+          expect(result.name).to(equal(data["name"]))
+        }
+      }
+
       describe("#dictionary") {
         beforeEach {
           data["relations"] = ["viewmodels" : [data, data]]
