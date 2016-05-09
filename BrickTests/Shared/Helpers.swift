@@ -3,7 +3,7 @@ import Sugar
 
 struct Meta: Mappable {
   var id = 0
-  var name: String? = ""
+  var name: String?
 
   init(_ map: JSONDictionary) {
     id <- map.property("id")
