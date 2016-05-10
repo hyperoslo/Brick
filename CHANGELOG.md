@@ -2,7 +2,14 @@
 
 ## [Unreleased](https://github.com/hyperoslo/Brick/tree/HEAD)
 
-[Full Changelog](https://github.com/hyperoslo/Brick/compare/0.7.0...HEAD)
+[Full Changelog](https://github.com/hyperoslo/Brick/compare/0.8.0...HEAD)
+
+**Merged pull requests:**
+
+- Improve: compare relations [\#13](https://github.com/hyperoslo/Brick/pull/13) ([vadymmarkov](https://github.com/vadymmarkov))
+
+## [0.8.0](https://github.com/hyperoslo/Brick/tree/0.8.0) (2016-05-10)
+[Full Changelog](https://github.com/hyperoslo/Brick/compare/0.7.0...0.8.0)
 
 **Merged pull requests:**
 
