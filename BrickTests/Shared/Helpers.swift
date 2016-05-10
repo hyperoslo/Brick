@@ -3,7 +3,7 @@ import Sugar
 
 struct Meta {
   var id = 0
-  var name: String? = ""
+  var name: String?
 }
 
 extension Meta: Mappable {
