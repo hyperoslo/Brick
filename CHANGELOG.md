@@ -2,7 +2,14 @@
 
 ## [Unreleased](https://github.com/hyperoslo/Brick/tree/HEAD)
 
-[Full Changelog](https://github.com/hyperoslo/Brick/compare/0.6.1...HEAD)
+[Full Changelog](https://github.com/hyperoslo/Brick/compare/0.7.0...HEAD)
+
+**Merged pull requests:**
+
+- Feature: mappable meta [\#12](https://github.com/hyperoslo/Brick/pull/12) ([vadymmarkov](https://github.com/vadymmarkov))
+
+## [0.7.0](https://github.com/hyperoslo/Brick/tree/0.7.0) (2016-04-26)
+[Full Changelog](https://github.com/hyperoslo/Brick/compare/0.6.1...0.7.0)
 
 **Merged pull requests:**
 
