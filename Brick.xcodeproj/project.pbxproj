@@ -15,6 +15,8 @@
 		BD6D7AE21CBA768A00FBF0BD /* Fakery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD6D7AE11CBA768A00FBF0BD /* Fakery.framework */; };
 		BDDA5FEB1CBBCF45000FD5A6 /* ViewConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDA5FEA1CBBCF45000FD5A6 /* ViewConfigurable.swift */; };
 		BDDA5FEC1CBBCF45000FD5A6 /* ViewConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDA5FEA1CBBCF45000FD5A6 /* ViewConfigurable.swift */; };
+		D57832991CE142DE005ED144 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57832961CE142C8005ED144 /* Helpers.swift */; };
+		D578329A1CE142DF005ED144 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57832961CE142C8005ED144 /* Helpers.swift */; };
 		D5ACAC9A1CCE439F00567809 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ACAC991CCE439F00567809 /* Extensions.swift */; };
 		D5ACAC9B1CCE439F00567809 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ACAC991CCE439F00567809 /* Extensions.swift */; };
 		D5ACAC9F1CCE45CE00567809 /* ExtensionsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ACAC9C1CCE449A00567809 /* ExtensionsSpec.swift */; };
@@ -60,6 +62,7 @@
 		BDDA5FEA1CBBCF45000FD5A6 /* ViewConfigurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewConfigurable.swift; sourceTree = "<group>"; };
 		D500FD111C3AABED00782D78 /* Playground-iOS.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Playground-iOS.playground"; sourceTree = "<group>"; };
 		D500FD121C3AAC8E00782D78 /* Playground-Mac.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Playground-Mac.playground"; sourceTree = "<group>"; };
+		D57832961CE142C8005ED144 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		D5ACAC991CCE439F00567809 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D5ACAC9C1CCE449A00567809 /* ExtensionsSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionsSpec.swift; sourceTree = "<group>"; };
 		D5B2E89F1C3A780C00C0327D /* Brick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Brick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -206,6 +209,7 @@
 			children = (
 				D5C629971C3A8BDA007F7B7C /* VIewModelSpec.swift */,
 				D5ACAC9C1CCE449A00567809 /* ExtensionsSpec.swift */,
+				D57832961CE142C8005ED144 /* Helpers.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -482,6 +486,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5ACAC9F1CCE45CE00567809 /* ExtensionsSpec.swift in Sources */,
+				D57832991CE142DE005ED144 /* Helpers.swift in Sources */,
 				D5C6299E1C3A8C75007F7B7C /* VIewModelSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -502,6 +507,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5ACACA01CCE45CF00567809 /* ExtensionsSpec.swift in Sources */,
+				D578329A1CE142DF005ED144 /* Helpers.swift in Sources */,
 				D5C6299C1C3A8BDA007F7B7C /* VIewModelSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

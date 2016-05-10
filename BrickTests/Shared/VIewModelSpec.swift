@@ -64,12 +64,28 @@ class ViewModelSpec: QuickSpec {
       }
 
       describe("#meta") {
-        beforeEach {
+        it("resolves meta data created from JSON") {
           viewModel = ViewModel(data)
+          expect(viewModel.meta("domain", "")).to(equal(data["meta"]!["domain"]))
         }
 
-        it("resolves meta data") {
-          expect(viewModel.meta("domain", "")).to(equal(data["meta"]!["domain"]))
+        it("resolves meta data created from object") {
+          var data = ["id": 11, "name": "Name"]
+
+          viewModel = ViewModel(meta: Meta(data))
+          expect(viewModel.meta("id", 0)).to(equal(data["id"]))
+          expect(viewModel.meta("name", "")).to(equal(data["name"]))
+        }
+      }
+
+      describe("#metaInstance") {
+        it("resolves meta data created from object") {
+          var data = ["id": 11, "name": "Name"]
+          viewModel = ViewModel(meta: Meta(data))
+          let result: Meta = viewModel.metaInstance()
+
+          expect(result.id).to(equal(data["id"]))
+          expect(result.name).to(equal(data["name"]))
         }
       }
 

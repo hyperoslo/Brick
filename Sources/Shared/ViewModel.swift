@@ -138,6 +138,18 @@ public struct ViewModel: Mappable {
     self.relations = relations
   }
 
+  /**
+   Initialization a new instance of a ViewModel and map it to a JSON dictionary
+
+   - Parameter title: The title string for the view model, defaults to empty string
+   - Parameter subtitle: The subtitle string for the view model, default to empty string
+   - Parameter image: Image name or URL as a string, default to empty string
+   */
+  public init(title: String = "", subtitle: String = "", image: String = "", kind: StringConvertible = "", action: String? = nil, size: CGSize = CGSize(width: 0, height: 0), meta: Mappable, relations: [String : [ViewModel]] = [:]) {
+    self.init(title: title, subtitle: subtitle, image: image, kind: kind, action: action,
+              size: size, meta: meta.metaProperties, relations: relations)
+  }
+
   // MARK: - Helpers
 
   /**
@@ -160,6 +172,15 @@ public struct ViewModel: Mappable {
    */
   public func meta<T>(key: String, type: T.Type) -> T? {
     return meta[key] as? T
+  }
+
+  /**
+   A generic convenience method for resolving meta instance
+
+   - Returns: A generic meta instance based on `type`
+   */
+  public func metaInstance<T: Mappable>() -> T {
+    return T(meta)
   }
 
   /**

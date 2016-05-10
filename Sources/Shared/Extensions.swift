@@ -1,3 +1,5 @@
+import Tailor
+
 // MARK: - Array
 
 public extension _ArrayType where Generator.Element == ViewModel {
@@ -39,5 +41,31 @@ extension Dictionary where Key: StringLiteralConvertible {
       guard let key = key.string as? Key else { return nil }
       return self[key]
     }
+  }
+}
+
+// MARK: - Mappable
+
+extension Mappable {
+
+  /**
+   - Returns: A key-value dictionary.
+   */
+  var metaProperties: [String : AnyObject] {
+    var properties = [String : AnyObject]()
+
+    for tuple in Mirror(reflecting: self).children {
+      guard let key = tuple.label else { continue }
+
+      if let value = tuple.value as? AnyObject {
+        properties[key] = value
+      } else if let value = Mirror(reflecting: tuple.value).descendant("Some") as? AnyObject {
+        properties[key] = value
+      } else {
+        continue
+      }
+    }
+
+    return properties
   }
 }
