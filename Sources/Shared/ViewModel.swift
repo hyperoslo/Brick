@@ -232,14 +232,13 @@ public func ==(lhs: [ViewModel], rhs: [ViewModel]) -> Bool {
  - Returns: A boolean value, true if both ViewModel are equal
  */
 public func ==(lhs: ViewModel, rhs: ViewModel) -> Bool {
-  let equal = lhs.title == rhs.title &&
+  return lhs.title == rhs.title &&
     lhs.subtitle == rhs.subtitle &&
     lhs.image == rhs.image &&
     lhs.kind == rhs.kind &&
     lhs.action == rhs.action &&
-    (lhs.meta as NSDictionary).isEqual(rhs.meta as NSDictionary)
-
-  return equal
+    (lhs.meta as NSDictionary).isEqual(rhs.meta as NSDictionary) &&
+    compareRelations(lhs, rhs)
 }
 
 /**
@@ -256,7 +255,8 @@ public func ===(lhs: ViewModel, rhs: ViewModel) -> Bool {
     lhs.kind == rhs.kind &&
     lhs.action == rhs.action &&
     lhs.size == rhs.size &&
-    (lhs.meta as NSDictionary).isEqual(rhs.meta as NSDictionary)
+    (lhs.meta as NSDictionary).isEqual(rhs.meta as NSDictionary) &&
+    compareRelations(lhs, rhs)
 
   return equal
 }
@@ -269,4 +269,19 @@ public func ===(lhs: ViewModel, rhs: ViewModel) -> Bool {
  */
 public func !=(lhs: ViewModel, rhs: ViewModel) -> Bool {
   return !(lhs == rhs)
+}
+
+func compareRelations(lhs: ViewModel, _ rhs: ViewModel) -> Bool {
+  guard lhs.relations.count == rhs.relations.count else {
+    return false
+  }
+
+  var equal = true
+
+  for (key, value) in lhs.relations {
+    guard let rightValue = rhs.relations[key] where value == rightValue
+      else { equal = false; break }
+  }
+
+  return equal
 }
