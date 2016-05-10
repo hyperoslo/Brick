@@ -60,6 +60,12 @@ class ViewModelSpec: QuickSpec {
           expect(viewModel.relations["viewmodels"]!.last!.image).to(equal(data["image"] as? String))
           expect(viewModel.relations["viewmodels"]!.last!.kind).to(equal(data["kind"] as? String))
           expect(viewModel.relations["viewmodels"]!.last!.action).to(equal(data["action"] as? String))
+
+          let viewModel2 = viewModel
+          expect(viewModel == viewModel2).to(beTrue())
+
+          viewModel.relations["viewmodels"]![2].title = "new"
+          expect(viewModel == viewModel2).to(beFalse())
         }
       }
 
@@ -115,6 +121,25 @@ class ViewModelSpec: QuickSpec {
         it("updates kind") {
           viewModel.update(kind: "test")
           expect(viewModel.kind).to(equal("test"))
+        }
+      }
+
+      describe("#compareRelations") {
+        beforeEach {
+          data["relations"] = ["viewmodels" : [data, data, data]]
+          viewModel = ViewModel(data)
+        }
+
+        it("compare relations properly") {
+          var viewModel2 = ViewModel(data)
+          expect(compareRelations(viewModel, viewModel2)).to(beTrue())
+
+          viewModel2.relations["viewmodels"]![2].title = "new"
+          expect(compareRelations(viewModel, viewModel2)).to(beFalse())
+
+          data["relations"] = ["viewmodels" : [data, data]]
+          viewModel2 = ViewModel(data)
+          expect(compareRelations(viewModel, viewModel2)).to(beFalse())
         }
       }
     }
