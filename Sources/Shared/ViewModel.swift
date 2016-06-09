@@ -226,6 +226,24 @@ public func ==(lhs: [ViewModel], rhs: [ViewModel]) -> Bool {
 }
 
 /**
+ A collection of ViewModel Equatable implementation to see if they are truly equal
+ - Parameter lhs: Left hand collection of ViewModels
+ - Parameter rhs: Right hand collection of ViewModels
+ - Returns: A boolean value, true if both ViewModel are equal
+ */
+public func ===(lhs: [ViewModel], rhs: [ViewModel]) -> Bool {
+  var equal = lhs.count == rhs.count
+
+  if !equal { return false }
+
+  for (index, item) in lhs.enumerate() {
+    if !(item === rhs[index]) { equal = false; break }
+  }
+
+  return equal
+}
+
+/**
  ViewModel Equatable implemetnation
  - Parameter lhs: Left hand ViewModel
  - Parameter rhs: Right hand ViewModel
