@@ -95,6 +95,48 @@ class ViewModelSpec: QuickSpec {
         }
       }
 
+      describe("#equality") {
+        it("compares two view models that are equal") {
+          let left = ViewModel(title: "foo", size: CGSize(width: 40, height: 40))
+          let right = ViewModel(title: "foo", size: CGSize(width: 40, height: 40))
+
+          expect(left === right).to(beTrue())
+        }
+
+        it("compares two unequal view model") {
+          let left = ViewModel(title: "foo", size: CGSize(width: 40, height: 40))
+          let right = ViewModel(title: "foo", size: CGSize(width: 60, height: 60))
+
+          expect(left === right).to(beFalse())
+        }
+
+        it("compares a collection of view models that are equal") {
+          let left = [
+            ViewModel(title: "foo", size: CGSize(width: 40, height: 40)),
+            ViewModel(title: "foo", size: CGSize(width: 40, height: 40))
+          ]
+          let right = [
+            ViewModel(title: "foo", size: CGSize(width: 40, height: 40)),
+            ViewModel(title: "foo", size: CGSize(width: 40, height: 40))
+          ]
+
+          expect(left === right).to(beTrue())
+        }
+
+        it("compares a collection of view models that are not equal") {
+          let left = [
+            ViewModel(title: "foo", size: CGSize(width: 40, height: 40)),
+            ViewModel(title: "foo", size: CGSize(width: 60, height: 40))
+          ]
+          let right = [
+            ViewModel(title: "foo", size: CGSize(width: 40, height: 40)),
+            ViewModel(title: "foo", size: CGSize(width: 40, height: 40))
+          ]
+
+          expect(left === right).to(beFalse())
+        }
+      }
+
       describe("#dictionary") {
         beforeEach {
           data["relations"] = ["viewmodels" : [data, data]]
