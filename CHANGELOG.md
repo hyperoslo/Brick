@@ -2,7 +2,14 @@
 
 ## [Unreleased](https://github.com/hyperoslo/Brick/tree/HEAD)
 
-[Full Changelog](https://github.com/hyperoslo/Brick/compare/0.8.0...HEAD)
+[Full Changelog](https://github.com/hyperoslo/Brick/compare/0.8.1...HEAD)
+
+**Merged pull requests:**
+
+- Improve equality [\#14](https://github.com/hyperoslo/Brick/pull/14) ([zenangst](https://github.com/zenangst))
+
+## [0.8.1](https://github.com/hyperoslo/Brick/tree/0.8.1) (2016-05-10)
+[Full Changelog](https://github.com/hyperoslo/Brick/compare/0.8.0...0.8.1)
 
 **Merged pull requests:**
 
