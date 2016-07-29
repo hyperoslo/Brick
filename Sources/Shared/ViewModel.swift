@@ -244,7 +244,7 @@ public func ===(lhs: [ViewModel], rhs: [ViewModel]) -> Bool {
 }
 
 /**
- ViewModel Equatable implemetnation
+ ViewModel Equatable implementation
  - Parameter lhs: Left hand ViewModel
  - Parameter rhs: Right hand ViewModel
  - Returns: A boolean value, true if both ViewModel are equal
@@ -280,7 +280,7 @@ public func ===(lhs: ViewModel, rhs: ViewModel) -> Bool {
 }
 
 /**
- A reverse Equatable implemetnation for comparing ViewModel's
+ A reverse Equatable implementation for comparing ViewModel's
  - Parameter lhs: Left hand ViewModel
  - Parameter rhs: Right hand ViewModel
  - Returns: A boolean value, false if both ViewModel are equal
