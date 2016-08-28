@@ -96,6 +96,20 @@ class ViewModelSpec: QuickSpec {
       }
 
       describe("#equality") {
+        it("compares two view models that are equal using identifier") {
+          let left = ViewModel(identifier: "foo".hashValue)
+          let right = ViewModel(identifier: "foo".hashValue)
+
+          expect(left === right).to(beTrue())
+        }
+
+        it("compares two view models that are not equal using identifier") {
+          let left = ViewModel(identifier: "foo".hashValue)
+          let right = ViewModel(identifier: "bar".hashValue)
+
+          expect(left === right).to(beFalse())
+        }
+
         it("compares two view models that are equal") {
           let left = ViewModel(title: "foo", size: CGSize(width: 40, height: 40))
           let right = ViewModel(title: "foo", size: CGSize(width: 40, height: 40))
