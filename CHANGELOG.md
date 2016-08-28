@@ -2,7 +2,18 @@
 
 ## [Unreleased](https://github.com/hyperoslo/Brick/tree/HEAD)
 
-[Full Changelog](https://github.com/hyperoslo/Brick/compare/0.8.1...HEAD)
+[Full Changelog](https://github.com/hyperoslo/Brick/compare/0.8.2...HEAD)
+
+**Closed issues:**
+
+- Meta properties generator [\#11](https://github.com/hyperoslo/Brick/issues/11)
+
+**Merged pull requests:**
+
+- Feature/identifier [\#15](https://github.com/hyperoslo/Brick/pull/15) ([zenangst](https://github.com/zenangst))
+
+## [0.8.2](https://github.com/hyperoslo/Brick/tree/0.8.2) (2016-06-09)
+[Full Changelog](https://github.com/hyperoslo/Brick/compare/0.8.1...0.8.2)
 
 **Merged pull requests:**
 
