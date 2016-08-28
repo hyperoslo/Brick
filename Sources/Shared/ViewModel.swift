@@ -17,6 +17,7 @@ public struct ViewModel: Mappable {
   */
   public enum Key: String {
     case Index
+    case Identifier
     case Title
     case Subtitle
     case Image
@@ -36,6 +37,8 @@ public struct ViewModel: Mappable {
 
   /// The index of the ViewModel when appearing in a list, should be computed and continuously updated by the data source
   public var index = 0
+  /// An optional identifier for your data
+  public var identifier: Int?
   /// The main representation of the ViewModel
   public var title = ""
   /// Supplementary information to the ViewModel
@@ -68,6 +71,10 @@ public struct ViewModel: Mappable {
       ]
     ]
 
+    if let identifier = identifier {
+      dictionary[Key.Identifier.string] = identifier
+    }
+
     if let action = action {
       dictionary[Key.Action.string] = action
     }
@@ -93,6 +100,7 @@ public struct ViewModel: Mappable {
   */
   public init(_ map: JSONDictionary) {
     index    <- map.property(.Index)
+    identifier = map.property(.Identifier)
     title    <- map.property(.Title)
     subtitle <- map.property(.Subtitle)
     image    <- map.property(.Image)
@@ -127,7 +135,8 @@ public struct ViewModel: Mappable {
    - Parameter subtitle: The subtitle string for the view model, default to empty string
    - Parameter image: Image name or URL as a string, default to empty string
    */
-  public init(title: String = "", subtitle: String = "", image: String = "", kind: StringConvertible = "", action: String? = nil, size: CGSize = CGSize(width: 0, height: 0), meta: JSONDictionary = [:], relations: [String : [ViewModel]] = [:]) {
+  public init(identifier: Int? = nil, title: String = "", subtitle: String = "", image: String = "", kind: StringConvertible = "", action: String? = nil, size: CGSize = CGSize(width: 0, height: 0), meta: JSONDictionary = [:], relations: [String : [ViewModel]] = [:]) {
+    self.identifier = identifier
     self.title = title
     self.subtitle = subtitle
     self.image = image
@@ -145,8 +154,8 @@ public struct ViewModel: Mappable {
    - Parameter subtitle: The subtitle string for the view model, default to empty string
    - Parameter image: Image name or URL as a string, default to empty string
    */
-  public init(title: String = "", subtitle: String = "", image: String = "", kind: StringConvertible = "", action: String? = nil, size: CGSize = CGSize(width: 0, height: 0), meta: Mappable, relations: [String : [ViewModel]] = [:]) {
-    self.init(title: title, subtitle: subtitle, image: image, kind: kind, action: action,
+  public init(identifier: Int? = nil, title: String = "", subtitle: String = "", image: String = "", kind: StringConvertible = "", action: String? = nil, size: CGSize = CGSize(width: 0, height: 0), meta: Mappable, relations: [String : [ViewModel]] = [:]) {
+    self.init(identifier: identifier, title: title, subtitle: subtitle, image: image, kind: kind, action: action,
               size: size, meta: meta.metaProperties, relations: relations)
   }
 
@@ -250,7 +259,8 @@ public func ===(lhs: [ViewModel], rhs: [ViewModel]) -> Bool {
  - Returns: A boolean value, true if both ViewModel are equal
  */
 public func ==(lhs: ViewModel, rhs: ViewModel) -> Bool {
-  return lhs.title == rhs.title &&
+  return lhs.identifier == rhs.identifier &&
+    lhs.title == rhs.title &&
     lhs.subtitle == rhs.subtitle &&
     lhs.image == rhs.image &&
     lhs.kind == rhs.kind &&
@@ -267,7 +277,8 @@ public func ==(lhs: ViewModel, rhs: ViewModel) -> Bool {
  - Returns: A boolean value, true if both ViewModel are equal
  */
 public func ===(lhs: ViewModel, rhs: ViewModel) -> Bool {
-  let equal = lhs.title == rhs.title &&
+  let equal = lhs.identifier == rhs.identifier &&
+    lhs.title == rhs.title &&
     lhs.subtitle == rhs.subtitle &&
     lhs.image == rhs.image &&
     lhs.kind == rhs.kind &&
