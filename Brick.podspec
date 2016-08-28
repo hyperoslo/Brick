@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = "Brick"
   s.summary          = "A generic view model for both basic and complex scenarios."
-  s.version          = "0.8.2"
+  s.version          = "0.9.0"
   s.homepage         = "https://github.com/hyperoslo/Brick"
   s.license          = 'MIT'
   s.author           = { "Hyper Interaktiv AS" => "ios@hyper.no" }
