@@ -60,16 +60,17 @@ public struct ViewModel: Mappable {
   public var dictionary: JSONDictionary {
     var dictionary: [String: AnyObject] = [
       Key.Index.string : index,
-      Key.Title.string : title,
-      Key.Subtitle.string : subtitle,
-      Key.Image.string : image,
       Key.Kind.string : kind,
-      Key.Meta.string : meta,
       Key.Size.string : [
         Key.Width.string : size.width,
         Key.Height.string : size.height
       ]
     ]
+
+    if !title.isEmpty { dictionary[Key.Title.string] = title }
+    if !subtitle.isEmpty { dictionary[Key.Subtitle.string] = subtitle }
+    if !image.isEmpty { dictionary[Key.Image.string] = image }
+    if !meta.isEmpty { dictionary[Key.Meta.string] = meta }
 
     if let identifier = identifier {
       dictionary[Key.Identifier.string] = identifier
@@ -86,7 +87,9 @@ public struct ViewModel: Mappable {
       array.forEach { relationItems[key]?.append($0.dictionary) }
     }
 
-    dictionary[Key.Relations.string] = relationItems
+    if !relationItems.isEmpty {
+      dictionary[Key.Relations.string] = relationItems
+    }
 
     return dictionary
   }
