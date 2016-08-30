@@ -2,7 +2,14 @@
 
 ## [Unreleased](https://github.com/hyperoslo/Brick/tree/HEAD)
 
-[Full Changelog](https://github.com/hyperoslo/Brick/compare/0.8.2...HEAD)
+[Full Changelog](https://github.com/hyperoslo/Brick/compare/0.9.0...HEAD)
+
+**Merged pull requests:**
+
+- Feature/children [\#16](https://github.com/hyperoslo/Brick/pull/16) ([zenangst](https://github.com/zenangst))
+
+## [0.9.0](https://github.com/hyperoslo/Brick/tree/0.9.0) (2016-08-28)
+[Full Changelog](https://github.com/hyperoslo/Brick/compare/0.8.2...0.9.0)
 
 **Closed issues:**
 
