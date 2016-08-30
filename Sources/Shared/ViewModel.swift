@@ -25,6 +25,7 @@ public struct ViewModel: Mappable {
     case Kind
     case Action
     case Meta
+    case Children
     case Relations
     case Size
     case Width
@@ -51,6 +52,8 @@ public struct ViewModel: Mappable {
   public var action: String?
   /// The width and height of the view model, usually calculated and updated by the UI component
   public var size = CGSize(width: 0, height: 0)
+  /// A collection of items used for composition
+  public var children: JSONArray = []
   /// A key-value dictionary for any additional information
   public var meta = [String : AnyObject]()
   /// A key-value dictionary for related view models
@@ -79,6 +82,8 @@ public struct ViewModel: Mappable {
     if let action = action {
       dictionary[Key.Action.string] = action
     }
+
+    dictionary[Key.Children.string] = children
 
     var relationItems = [String : [JSONDictionary]]()
 
@@ -110,6 +115,7 @@ public struct ViewModel: Mappable {
     kind     <- map.property(.Type) ?? map.property(.Kind)
     action   <- map.property(.Action) ?? nil
     meta     <- map.property(.Meta)
+    children = map[.Children] as? JSONArray ?? []
 
     if let relation = map[.Relations] as? [String : [ViewModel]] {
       relations = relation
@@ -268,6 +274,7 @@ public func ==(lhs: ViewModel, rhs: ViewModel) -> Bool {
     lhs.image == rhs.image &&
     lhs.kind == rhs.kind &&
     lhs.action == rhs.action &&
+    (lhs.children as NSArray).isEqual(rhs.children as NSArray) &&
     (lhs.meta as NSDictionary).isEqual(rhs.meta as NSDictionary) &&
     compareRelations(lhs, rhs)
 }
@@ -287,6 +294,7 @@ public func ===(lhs: ViewModel, rhs: ViewModel) -> Bool {
     lhs.kind == rhs.kind &&
     lhs.action == rhs.action &&
     lhs.size == rhs.size &&
+    (lhs.children as NSArray).isEqual(rhs.children as NSArray) &&
     (lhs.meta as NSDictionary).isEqual(rhs.meta as NSDictionary) &&
     compareRelations(lhs, rhs)
 
