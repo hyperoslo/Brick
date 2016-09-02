@@ -9,12 +9,12 @@ import Sugar
 
 /**
  A value type struct, it conforms to the Mappable protocol so that it can be instantiated with JSON
-*/
+ */
 public struct ViewModel: Mappable {
 
   /**
    An enum with all the string keys used in the view model
-  */
+   */
   public enum Key: String {
     case Index
     case Identifier
@@ -105,7 +105,7 @@ public struct ViewModel: Mappable {
    Initialization a new instance of a ViewModel and map it to a JSON dictionary
 
    - Parameter map: A JSON dictionary
-  */
+   */
   public init(_ map: JSONDictionary) {
     index    <- map.property(.Index)
     identifier = map.property(.Identifier)
@@ -176,7 +176,7 @@ public struct ViewModel: Mappable {
    - Parameter key: String
    - Parameter defaultValue: A generic value that works as a fallback if the key value object cannot be cast into the generic type
    - Returns: A generic value based on `defaultValue`, it falls back to `defaultValue` if type casting fails
-  */
+   */
   public func meta<T>(key: String, _ defaultValue: T) -> T {
     return meta[key] as? T ?? defaultValue
   }
@@ -255,7 +255,10 @@ public func ===(lhs: [ViewModel], rhs: [ViewModel]) -> Bool {
   if !equal { return false }
 
   for (index, item) in lhs.enumerate() {
-    if !(item === rhs[index]) { equal = false; break }
+    if !(item === rhs[index]) {
+      equal = false
+      break
+    }
   }
 
   return equal
@@ -274,8 +277,7 @@ public func ==(lhs: ViewModel, rhs: ViewModel) -> Bool {
     lhs.image == rhs.image &&
     lhs.kind == rhs.kind &&
     lhs.action == rhs.action &&
-    (lhs.children as NSArray).isEqual(rhs.children as NSArray) &&
-    (lhs.meta as NSDictionary).isEqual(rhs.meta as NSDictionary) &&
+    (lhs.meta as NSDictionary).isEqualToDictionary(rhs.meta) &&
     compareRelations(lhs, rhs)
 }
 
@@ -294,8 +296,7 @@ public func ===(lhs: ViewModel, rhs: ViewModel) -> Bool {
     lhs.kind == rhs.kind &&
     lhs.action == rhs.action &&
     lhs.size == rhs.size &&
-    (lhs.children as NSArray).isEqual(rhs.children as NSArray) &&
-    (lhs.meta as NSDictionary).isEqual(rhs.meta as NSDictionary) &&
+    (lhs.meta as NSDictionary).isEqualToDictionary(rhs.meta) &&
     compareRelations(lhs, rhs)
 
   return equal
