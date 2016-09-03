@@ -2,7 +2,14 @@
 
 ## [Unreleased](https://github.com/hyperoslo/Brick/tree/HEAD)
 
-[Full Changelog](https://github.com/hyperoslo/Brick/compare/0.9.0...HEAD)
+[Full Changelog](https://github.com/hyperoslo/Brick/compare/0.9.1...HEAD)
+
+**Merged pull requests:**
+
+- Exclude children in equitable operators [\#17](https://github.com/hyperoslo/Brick/pull/17) ([zenangst](https://github.com/zenangst))
+
+## [0.9.1](https://github.com/hyperoslo/Brick/tree/0.9.1) (2016-08-30)
+[Full Changelog](https://github.com/hyperoslo/Brick/compare/0.9.0...0.9.1)
 
 **Merged pull requests:**
 
