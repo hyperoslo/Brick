@@ -295,6 +295,7 @@
 				BDBA5F191D940F09003A5C6B /* Sources */,
 				BDBA5F1A1D940F09003A5C6B /* Frameworks */,
 				BDBA5F1B1D940F09003A5C6B /* Resources */,
+				BD000DA51D94156A00791E10 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -499,6 +500,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		BD000DA51D94156A00791E10 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/tvOS/Quick.framework",
+				"$(SRCROOT)/Carthage/Build/tvOS/Nimble.framework",
+				"$(SRCROOT)/Carthage/Build/tvOS/Fakery.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 		BD02C3361D9410300058E0FE /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
