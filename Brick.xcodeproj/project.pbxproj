@@ -12,6 +12,9 @@
 		BD6D7ADE1CBA754900FBF0BD /* Tailor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD6D7ADC1CBA754900FBF0BD /* Tailor.framework */; };
 		BD6D7AE01CBA768200FBF0BD /* Fakery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD6D7ADF1CBA768200FBF0BD /* Fakery.framework */; };
 		BD6D7AE21CBA768A00FBF0BD /* Fakery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD6D7AE11CBA768A00FBF0BD /* Fakery.framework */; };
+		BD8070D61D9448830082800B /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8070D31D9448830082800B /* Quick.framework */; };
+		BD8070D71D9448830082800B /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8070D41D9448830082800B /* Nimble.framework */; };
+		BD8070D91D94488E0082800B /* Fakery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8070D81D94488E0082800B /* Fakery.framework */; };
 		BDBA5F221D940F09003A5C6B /* Brick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDFD54221D940EDC003CB98B /* Brick.framework */; };
 		BDDA5FEB1CBBCF45000FD5A6 /* ViewConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDA5FEA1CBBCF45000FD5A6 /* ViewConfigurable.swift */; };
 		BDDA5FEC1CBBCF45000FD5A6 /* ViewConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDA5FEA1CBBCF45000FD5A6 /* ViewConfigurable.swift */; };
@@ -72,6 +75,10 @@
 		BD6D7ADC1CBA754900FBF0BD /* Tailor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Tailor.framework; path = Carthage/Build/Mac/Tailor.framework; sourceTree = "<group>"; };
 		BD6D7ADF1CBA768200FBF0BD /* Fakery.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fakery.framework; path = Carthage/Build/Mac/Fakery.framework; sourceTree = "<group>"; };
 		BD6D7AE11CBA768A00FBF0BD /* Fakery.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fakery.framework; path = Carthage/Build/iOS/Fakery.framework; sourceTree = "<group>"; };
+		BD8070D21D9448830082800B /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/tvOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		BD8070D31D9448830082800B /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/tvOS/Quick.framework; sourceTree = "<group>"; };
+		BD8070D41D9448830082800B /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/tvOS/Nimble.framework; sourceTree = "<group>"; };
+		BD8070D81D94488E0082800B /* Fakery.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fakery.framework; path = Carthage/Build/tvOS/Fakery.framework; sourceTree = "<group>"; };
 		BDBA5F1D1D940F09003A5C6B /* Brick-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Brick-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDDA5FEA1CBBCF45000FD5A6 /* ViewConfigurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewConfigurable.swift; sourceTree = "<group>"; };
 		BDE7D2151D940F7800027CE4 /* Info-tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
@@ -105,6 +112,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDBA5F221D940F09003A5C6B /* Brick.framework in Frameworks */,
+				BD8070D91D94488E0082800B /* Fakery.framework in Frameworks */,
+				BD8070D61D9448830082800B /* Quick.framework in Frameworks */,
+				BD8070D71D9448830082800B /* Nimble.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +262,10 @@
 		DAA38AA31CBEE86200D48603 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BD8070D81D94488E0082800B /* Fakery.framework */,
+				BD8070D21D9448830082800B /* SwiftyJSON.framework */,
+				BD8070D31D9448830082800B /* Quick.framework */,
+				BD8070D41D9448830082800B /* Nimble.framework */,
 				BD53A9031D941ADB0026EC93 /* Tailor.framework */,
 				BD6D7AE11CBA768A00FBF0BD /* Fakery.framework */,
 				BD6D7ADF1CBA768200FBF0BD /* Fakery.framework */,
@@ -688,8 +702,12 @@
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_IDENTITY = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/BrickTests/Info-tvOS.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zenangst.Brick-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
@@ -702,8 +720,12 @@
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_IDENTITY = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/BrickTests/Info-tvOS.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zenangst.Brick-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
