@@ -11,8 +11,16 @@
 		BD6D7ADE1CBA754900FBF0BD /* Tailor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD6D7ADC1CBA754900FBF0BD /* Tailor.framework */; };
 		BD6D7AE01CBA768200FBF0BD /* Fakery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD6D7ADF1CBA768200FBF0BD /* Fakery.framework */; };
 		BD6D7AE21CBA768A00FBF0BD /* Fakery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD6D7AE11CBA768A00FBF0BD /* Fakery.framework */; };
+		BDBA5F221D940F09003A5C6B /* Brick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDFD54221D940EDC003CB98B /* Brick.framework */; };
 		BDDA5FEB1CBBCF45000FD5A6 /* ViewConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDA5FEA1CBBCF45000FD5A6 /* ViewConfigurable.swift */; };
 		BDDA5FEC1CBBCF45000FD5A6 /* ViewConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDA5FEA1CBBCF45000FD5A6 /* ViewConfigurable.swift */; };
+		BDE7D2171D940FC300027CE4 /* ViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C629971C3A8BDA007F7B7C /* ViewModelSpec.swift */; };
+		BDE7D2181D940FC300027CE4 /* ExtensionsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ACAC9C1CCE449A00567809 /* ExtensionsSpec.swift */; };
+		BDE7D2191D940FC300027CE4 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57832961CE142C8005ED144 /* Helpers.swift */; };
+		BDE7D21A1D940FCD00027CE4 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C629861C3A89A8007F7B7C /* ViewModel.swift */; };
+		BDE7D21B1D940FCD00027CE4 /* ViewConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDA5FEA1CBBCF45000FD5A6 /* ViewConfigurable.swift */; };
+		BDE7D21C1D940FCD00027CE4 /* StringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA38AA41CBEEAD900D48603 /* StringConvertible.swift */; };
+		BDE7D21D1D940FCD00027CE4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ACAC991CCE439F00567809 /* Extensions.swift */; };
 		D57832991CE142DE005ED144 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57832961CE142C8005ED144 /* Helpers.swift */; };
 		D578329A1CE142DF005ED144 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57832961CE142C8005ED144 /* Helpers.swift */; };
 		D5ACAC9A1CCE439F00567809 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ACAC991CCE439F00567809 /* Extensions.swift */; };
@@ -34,6 +42,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		BDBA5F231D940F09003A5C6B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5B2E8961C3A780C00C0327D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BDFD54211D940EDC003CB98B;
+			remoteInfo = "Brick-tvOS";
+		};
 		D5B2E8AB1C3A780C00C0327D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D5B2E8961C3A780C00C0327D /* Project object */;
@@ -55,7 +70,11 @@
 		BD6D7ADC1CBA754900FBF0BD /* Tailor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Tailor.framework; path = Carthage/Build/Mac/Tailor.framework; sourceTree = "<group>"; };
 		BD6D7ADF1CBA768200FBF0BD /* Fakery.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fakery.framework; path = Carthage/Build/Mac/Fakery.framework; sourceTree = "<group>"; };
 		BD6D7AE11CBA768A00FBF0BD /* Fakery.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fakery.framework; path = Carthage/Build/iOS/Fakery.framework; sourceTree = "<group>"; };
+		BDBA5F1D1D940F09003A5C6B /* Brick-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Brick-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDDA5FEA1CBBCF45000FD5A6 /* ViewConfigurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewConfigurable.swift; sourceTree = "<group>"; };
+		BDE7D2151D940F7800027CE4 /* Info-tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
+		BDE7D2161D940FAA00027CE4 /* Info-tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
+		BDFD54221D940EDC003CB98B /* Brick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Brick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D500FD111C3AABED00782D78 /* Playground-iOS.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Playground-iOS.playground"; sourceTree = "<group>"; };
 		D500FD121C3AAC8E00782D78 /* Playground-Mac.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Playground-Mac.playground"; sourceTree = "<group>"; };
 		D57832961CE142C8005ED144 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
@@ -79,6 +98,21 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		BDBA5F1A1D940F09003A5C6B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDBA5F221D940F09003A5C6B /* Brick.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDFD541E1D940EDC003CB98B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D5B2E89B1C3A780C00C0327D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -140,6 +174,8 @@
 				D5B2E8A91C3A780C00C0327D /* Brick-iOS-Tests.xctest */,
 				D5C629401C3A7FAA007F7B7C /* Brick.framework */,
 				D5C629491C3A7FAA007F7B7C /* Brick-Mac-Tests.xctest */,
+				BDFD54221D940EDC003CB98B /* Brick.framework */,
+				BDBA5F1D1D940F09003A5C6B /* Brick-tvOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -147,6 +183,7 @@
 		D5C6295C1C3A800E007F7B7C /* Brick */ = {
 			isa = PBXGroup;
 			children = (
+				BDE7D2161D940FAA00027CE4 /* Info-tvOS.plist */,
 				D5C6298B1C3A8BBD007F7B7C /* Info-iOS.plist */,
 				D5C6298C1C3A8BBD007F7B7C /* Info-Mac.plist */,
 			);
@@ -175,6 +212,7 @@
 		D5C6298F1C3A8BDA007F7B7C /* BrickTests */ = {
 			isa = PBXGroup;
 			children = (
+				BDE7D2151D940F7800027CE4 /* Info-tvOS.plist */,
 				D5C629901C3A8BDA007F7B7C /* Info-iOS.plist */,
 				D5C629911C3A8BDA007F7B7C /* Info-Mac.plist */,
 				D5C629921C3A8BDA007F7B7C /* iOS */,
@@ -226,6 +264,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		BDFD541F1D940EDC003CB98B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D5B2E89C1C3A780C00C0327D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -243,6 +288,43 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		BDBA5F1C1D940F09003A5C6B /* Brick-tvOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BDBA5F271D940F09003A5C6B /* Build configuration list for PBXNativeTarget "Brick-tvOSTests" */;
+			buildPhases = (
+				BDBA5F191D940F09003A5C6B /* Sources */,
+				BDBA5F1A1D940F09003A5C6B /* Frameworks */,
+				BDBA5F1B1D940F09003A5C6B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BDBA5F241D940F09003A5C6B /* PBXTargetDependency */,
+			);
+			name = "Brick-tvOSTests";
+			productName = "Brick-tvOSTests";
+			productReference = BDBA5F1D1D940F09003A5C6B /* Brick-tvOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BDFD54211D940EDC003CB98B /* Brick-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BDFD54291D940EDC003CB98B /* Build configuration list for PBXNativeTarget "Brick-tvOS" */;
+			buildPhases = (
+				BDFD541D1D940EDC003CB98B /* Sources */,
+				BDFD541E1D940EDC003CB98B /* Frameworks */,
+				BDFD541F1D940EDC003CB98B /* Headers */,
+				BDFD54201D940EDC003CB98B /* Resources */,
+				BD02C3361D9410300058E0FE /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Brick-tvOS";
+			productName = "Brick-tvOS";
+			productReference = BDFD54221D940EDC003CB98B /* Brick.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		D5B2E89E1C3A780C00C0327D /* Brick-iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D5B2E8B31C3A780C00C0327D /* Build configuration list for PBXNativeTarget "Brick-iOS" */;
@@ -325,10 +407,16 @@
 		D5B2E8961C3A780C00C0327D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Hyper Interaktiv AS";
 				TargetAttributes = {
+					BDBA5F1C1D940F09003A5C6B = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					BDFD54211D940EDC003CB98B = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
 					D5B2E89E1C3A780C00C0327D = {
 						CreatedOnToolsVersion = 7.2;
 					};
@@ -356,14 +444,30 @@
 			projectRoot = "";
 			targets = (
 				D5B2E89E1C3A780C00C0327D /* Brick-iOS */,
+				BDFD54211D940EDC003CB98B /* Brick-tvOS */,
 				D5C6293F1C3A7FAA007F7B7C /* Brick-Mac */,
 				D5B2E8A81C3A780C00C0327D /* Brick-iOS-Tests */,
 				D5C629481C3A7FAA007F7B7C /* Brick-Mac-Tests */,
+				BDBA5F1C1D940F09003A5C6B /* Brick-tvOSTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		BDBA5F1B1D940F09003A5C6B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDFD54201D940EDC003CB98B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D5B2E89D1C3A780C00C0327D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -395,6 +499,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		BD02C3361D9410300058E0FE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/tvOS/Tailor.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 		BD6D7AD51CBA74C700FBF0BD /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -460,6 +578,27 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		BDBA5F191D940F09003A5C6B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDE7D2181D940FC300027CE4 /* ExtensionsSpec.swift in Sources */,
+				BDE7D2171D940FC300027CE4 /* ViewModelSpec.swift in Sources */,
+				BDE7D2191D940FC300027CE4 /* Helpers.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDFD541D1D940EDC003CB98B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDE7D21A1D940FCD00027CE4 /* ViewModel.swift in Sources */,
+				BDE7D21B1D940FCD00027CE4 /* ViewConfigurable.swift in Sources */,
+				BDE7D21C1D940FCD00027CE4 /* StringConvertible.swift in Sources */,
+				BDE7D21D1D940FCD00027CE4 /* Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D5B2E89A1C3A780C00C0327D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -505,6 +644,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		BDBA5F241D940F09003A5C6B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BDFD54211D940EDC003CB98B /* Brick-tvOS */;
+			targetProxy = BDBA5F231D940F09003A5C6B /* PBXContainerItemProxy */;
+		};
 		D5B2E8AC1C3A780C00C0327D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D5B2E89E1C3A780C00C0327D /* Brick-iOS */;
@@ -518,6 +662,76 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		BDBA5F251D940F09003A5C6B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "";
+				INFOPLIST_FILE = "$(SRCROOT)/BrickTests/Info-tvOS.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zenangst.Brick-tvOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Debug;
+		};
+		BDBA5F261D940F09003A5C6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "";
+				INFOPLIST_FILE = "$(SRCROOT)/BrickTests/Info-tvOS.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zenangst.Brick-tvOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Release;
+		};
+		BDFD54271D940EDC003CB98B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Brick/Info-tvOS.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zenangst.Brick-tvOS";
+				PRODUCT_NAME = Brick;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Debug;
+		};
+		BDFD54281D940EDC003CB98B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Brick/Info-tvOS.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zenangst.Brick-tvOS";
+				PRODUCT_NAME = Brick;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Release;
+		};
 		D5B2E8B11C3A780C00C0327D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -775,6 +989,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		BDBA5F271D940F09003A5C6B /* Build configuration list for PBXNativeTarget "Brick-tvOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BDBA5F251D940F09003A5C6B /* Debug */,
+				BDBA5F261D940F09003A5C6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BDFD54291D940EDC003CB98B /* Build configuration list for PBXNativeTarget "Brick-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BDFD54271D940EDC003CB98B /* Debug */,
+				BDFD54281D940EDC003CB98B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D5B2E8991C3A780C00C0327D /* Build configuration list for PBXProject "Brick" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
