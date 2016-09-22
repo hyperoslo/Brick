@@ -7,19 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD0428951D94537C00310968 /* ViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C629971C3A8BDA007F7B7C /* ViewModelSpec.swift */; };
+		BD0428961D94537C00310968 /* ViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C629971C3A8BDA007F7B7C /* ViewModelSpec.swift */; };
+		BD0428971D94537D00310968 /* ViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C629971C3A8BDA007F7B7C /* ViewModelSpec.swift */; };
+		BD0428981D94538000310968 /* ExtensionsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ACAC9C1CCE449A00567809 /* ExtensionsSpec.swift */; };
+		BD0428991D94538100310968 /* ExtensionsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ACAC9C1CCE449A00567809 /* ExtensionsSpec.swift */; };
+		BD04289A1D94538100310968 /* ExtensionsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ACAC9C1CCE449A00567809 /* ExtensionsSpec.swift */; };
+		BD0ED05C1D9456A8004282A7 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BD8070D41D9448830082800B /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BD0ED05D1D9456AA004282A7 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BD8070D31D9448830082800B /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BD53A9041D941ADB0026EC93 /* Tailor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD53A9031D941ADB0026EC93 /* Tailor.framework */; };
 		BD6D7ADA1CBA754000FBF0BD /* Tailor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD6D7AD81CBA754000FBF0BD /* Tailor.framework */; };
 		BD6D7ADE1CBA754900FBF0BD /* Tailor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD6D7ADC1CBA754900FBF0BD /* Tailor.framework */; };
-		BD6D7AE01CBA768200FBF0BD /* Fakery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD6D7ADF1CBA768200FBF0BD /* Fakery.framework */; };
-		BD6D7AE21CBA768A00FBF0BD /* Fakery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD6D7AE11CBA768A00FBF0BD /* Fakery.framework */; };
-		BD8070D61D9448830082800B /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8070D31D9448830082800B /* Quick.framework */; };
-		BD8070D71D9448830082800B /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8070D41D9448830082800B /* Nimble.framework */; };
-		BD8070D91D94488E0082800B /* Fakery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8070D81D94488E0082800B /* Fakery.framework */; };
-		BDBA5F221D940F09003A5C6B /* Brick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDFD54221D940EDC003CB98B /* Brick.framework */; };
+		BDAB1DB81D9455FB00215838 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8070D41D9448830082800B /* Nimble.framework */; };
+		BDAB1DB91D9455FD00215838 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8070D31D9448830082800B /* Quick.framework */; };
 		BDDA5FEB1CBBCF45000FD5A6 /* ViewConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDA5FEA1CBBCF45000FD5A6 /* ViewConfigurable.swift */; };
 		BDDA5FEC1CBBCF45000FD5A6 /* ViewConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDA5FEA1CBBCF45000FD5A6 /* ViewConfigurable.swift */; };
-		BDE7D2171D940FC300027CE4 /* ViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C629971C3A8BDA007F7B7C /* ViewModelSpec.swift */; };
-		BDE7D2181D940FC300027CE4 /* ExtensionsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ACAC9C1CCE449A00567809 /* ExtensionsSpec.swift */; };
 		BDE7D2191D940FC300027CE4 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57832961CE142C8005ED144 /* Helpers.swift */; };
 		BDE7D21A1D940FCD00027CE4 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C629861C3A89A8007F7B7C /* ViewModel.swift */; };
 		BDE7D21B1D940FCD00027CE4 /* ViewConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDA5FEA1CBBCF45000FD5A6 /* ViewConfigurable.swift */; };
@@ -29,8 +31,6 @@
 		D578329A1CE142DF005ED144 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57832961CE142C8005ED144 /* Helpers.swift */; };
 		D5ACAC9A1CCE439F00567809 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ACAC991CCE439F00567809 /* Extensions.swift */; };
 		D5ACAC9B1CCE439F00567809 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ACAC991CCE439F00567809 /* Extensions.swift */; };
-		D5ACAC9F1CCE45CE00567809 /* ExtensionsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ACAC9C1CCE449A00567809 /* ExtensionsSpec.swift */; };
-		D5ACACA01CCE45CF00567809 /* ExtensionsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ACAC9C1CCE449A00567809 /* ExtensionsSpec.swift */; };
 		D5B2E8AA1C3A780C00C0327D /* Brick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5B2E89F1C3A780C00C0327D /* Brick.framework */; };
 		D5C6294A1C3A7FAA007F7B7C /* Brick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C629401C3A7FAA007F7B7C /* Brick.framework */; };
 		D5C629771C3A878E007F7B7C /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C629751C3A878E007F7B7C /* Quick.framework */; };
@@ -39,8 +39,6 @@
 		D5C6297C1C3A879F007F7B7C /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C6297A1C3A879F007F7B7C /* Nimble.framework */; };
 		D5C629871C3A89A8007F7B7C /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C629861C3A89A8007F7B7C /* ViewModel.swift */; };
 		D5C629881C3A89A8007F7B7C /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C629861C3A89A8007F7B7C /* ViewModel.swift */; };
-		D5C6299C1C3A8BDA007F7B7C /* ViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C629971C3A8BDA007F7B7C /* ViewModelSpec.swift */; };
-		D5C6299E1C3A8C75007F7B7C /* ViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C629971C3A8BDA007F7B7C /* ViewModelSpec.swift */; };
 		DAA38AA51CBEEAD900D48603 /* StringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA38AA41CBEEAD900D48603 /* StringConvertible.swift */; };
 		DAA38AA61CBEEAD900D48603 /* StringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA38AA41CBEEAD900D48603 /* StringConvertible.swift */; };
 /* End PBXBuildFile section */
@@ -69,16 +67,27 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		BD0ED05A1D94569E004282A7 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BD0ED05C1D9456A8004282A7 /* Nimble.framework in CopyFiles */,
+				BD0ED05D1D9456AA004282A7 /* Quick.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		BD53A9031D941ADB0026EC93 /* Tailor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Tailor.framework; path = Carthage/Build/tvOS/Tailor.framework; sourceTree = "<group>"; };
 		BD6D7AD81CBA754000FBF0BD /* Tailor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Tailor.framework; path = Carthage/Build/iOS/Tailor.framework; sourceTree = "<group>"; };
 		BD6D7ADC1CBA754900FBF0BD /* Tailor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Tailor.framework; path = Carthage/Build/Mac/Tailor.framework; sourceTree = "<group>"; };
-		BD6D7ADF1CBA768200FBF0BD /* Fakery.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fakery.framework; path = Carthage/Build/Mac/Fakery.framework; sourceTree = "<group>"; };
-		BD6D7AE11CBA768A00FBF0BD /* Fakery.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fakery.framework; path = Carthage/Build/iOS/Fakery.framework; sourceTree = "<group>"; };
 		BD8070D21D9448830082800B /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/tvOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		BD8070D31D9448830082800B /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/tvOS/Quick.framework; sourceTree = "<group>"; };
 		BD8070D41D9448830082800B /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/tvOS/Nimble.framework; sourceTree = "<group>"; };
-		BD8070D81D94488E0082800B /* Fakery.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fakery.framework; path = Carthage/Build/tvOS/Fakery.framework; sourceTree = "<group>"; };
 		BDBA5F1D1D940F09003A5C6B /* Brick-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Brick-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDDA5FEA1CBBCF45000FD5A6 /* ViewConfigurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewConfigurable.swift; sourceTree = "<group>"; };
 		BDE7D2151D940F7800027CE4 /* Info-tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
@@ -111,10 +120,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDBA5F221D940F09003A5C6B /* Brick.framework in Frameworks */,
-				BD8070D91D94488E0082800B /* Fakery.framework in Frameworks */,
-				BD8070D61D9448830082800B /* Quick.framework in Frameworks */,
-				BD8070D71D9448830082800B /* Nimble.framework in Frameworks */,
+				BDAB1DB81D9455FB00215838 /* Nimble.framework in Frameworks */,
+				BDAB1DB91D9455FD00215838 /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,7 +148,6 @@
 				D5C629771C3A878E007F7B7C /* Quick.framework in Frameworks */,
 				D5C629781C3A878E007F7B7C /* Nimble.framework in Frameworks */,
 				D5B2E8AA1C3A780C00C0327D /* Brick.framework in Frameworks */,
-				BD6D7AE21CBA768A00FBF0BD /* Fakery.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,7 +165,6 @@
 			files = (
 				D5C6297B1C3A879F007F7B7C /* Quick.framework in Frameworks */,
 				D5C6297C1C3A879F007F7B7C /* Nimble.framework in Frameworks */,
-				BD6D7AE01CBA768200FBF0BD /* Fakery.framework in Frameworks */,
 				D5C6294A1C3A7FAA007F7B7C /* Brick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,19 +267,16 @@
 		DAA38AA31CBEE86200D48603 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BD8070D81D94488E0082800B /* Fakery.framework */,
-				BD8070D21D9448830082800B /* SwiftyJSON.framework */,
-				BD8070D31D9448830082800B /* Quick.framework */,
 				BD8070D41D9448830082800B /* Nimble.framework */,
+				D5C6297A1C3A879F007F7B7C /* Nimble.framework */,
+				D5C629761C3A878E007F7B7C /* Nimble.framework */,
+				BD8070D31D9448830082800B /* Quick.framework */,
+				D5C629791C3A879F007F7B7C /* Quick.framework */,
+				D5C629751C3A878E007F7B7C /* Quick.framework */,
+				BD8070D21D9448830082800B /* SwiftyJSON.framework */,
 				BD53A9031D941ADB0026EC93 /* Tailor.framework */,
-				BD6D7AE11CBA768A00FBF0BD /* Fakery.framework */,
-				BD6D7ADF1CBA768200FBF0BD /* Fakery.framework */,
 				BD6D7ADC1CBA754900FBF0BD /* Tailor.framework */,
 				BD6D7AD81CBA754000FBF0BD /* Tailor.framework */,
-				D5C629791C3A879F007F7B7C /* Quick.framework */,
-				D5C6297A1C3A879F007F7B7C /* Nimble.framework */,
-				D5C629751C3A878E007F7B7C /* Quick.framework */,
-				D5C629761C3A878E007F7B7C /* Nimble.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -310,9 +312,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BDBA5F271D940F09003A5C6B /* Build configuration list for PBXNativeTarget "Brick-tvOSTests" */;
 			buildPhases = (
+				BD0ED05A1D94569E004282A7 /* CopyFiles */,
 				BDBA5F191D940F09003A5C6B /* Sources */,
 				BDBA5F1A1D940F09003A5C6B /* Frameworks */,
-				BDBA5F1B1D940F09003A5C6B /* Resources */,
 				BD000DA51D94156A00791E10 /* ShellScript */,
 			);
 			buildRules = (
@@ -369,7 +371,6 @@
 			buildPhases = (
 				D5B2E8A51C3A780C00C0327D /* Sources */,
 				D5B2E8A61C3A780C00C0327D /* Frameworks */,
-				D5B2E8A71C3A780C00C0327D /* Resources */,
 				D5C629731C3A86E3007F7B7C /* Copy frameworks with Carthage */,
 			);
 			buildRules = (
@@ -407,7 +408,6 @@
 			buildPhases = (
 				D5C629451C3A7FAA007F7B7C /* Sources */,
 				D5C629461C3A7FAA007F7B7C /* Frameworks */,
-				D5C629471C3A7FAA007F7B7C /* Resources */,
 				D5C629741C3A8717007F7B7C /* Copy frameworks with Carthage */,
 			);
 			buildRules = (
@@ -473,13 +473,6 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		BDBA5F1B1D940F09003A5C6B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		BDFD54201D940EDC003CB98B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -494,21 +487,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D5B2E8A71C3A780C00C0327D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D5C6293E1C3A7FAA007F7B7C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D5C629471C3A7FAA007F7B7C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -526,7 +505,6 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/tvOS/Quick.framework",
 				"$(SRCROOT)/Carthage/Build/tvOS/Nimble.framework",
-				"$(SRCROOT)/Carthage/Build/tvOS/Fakery.framework",
 			);
 			outputPaths = (
 			);
@@ -584,7 +562,6 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Quick.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Fakery.framework",
 			);
 			name = "Copy frameworks with Carthage";
 			outputPaths = (
@@ -601,7 +578,6 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/Mac/Quick.framework",
 				"$(SRCROOT)/Carthage/Build/Mac/Nimble.framework",
-				"$(SRCROOT)/Carthage/Build/Mac/Fakery.framework",
 			);
 			name = "Copy frameworks with Carthage";
 			outputPaths = (
@@ -617,9 +593,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDE7D2181D940FC300027CE4 /* ExtensionsSpec.swift in Sources */,
-				BDE7D2171D940FC300027CE4 /* ViewModelSpec.swift in Sources */,
+				BD04289A1D94538100310968 /* ExtensionsSpec.swift in Sources */,
 				BDE7D2191D940FC300027CE4 /* Helpers.swift in Sources */,
+				BD0428971D94537D00310968 /* ViewModelSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -649,9 +625,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5ACAC9F1CCE45CE00567809 /* ExtensionsSpec.swift in Sources */,
+				BD0428981D94538000310968 /* ExtensionsSpec.swift in Sources */,
 				D57832991CE142DE005ED144 /* Helpers.swift in Sources */,
-				D5C6299E1C3A8C75007F7B7C /* ViewModelSpec.swift in Sources */,
+				BD0428951D94537C00310968 /* ViewModelSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -670,9 +646,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5ACACA01CCE45CF00567809 /* ExtensionsSpec.swift in Sources */,
+				BD0428991D94538100310968 /* ExtensionsSpec.swift in Sources */,
 				D578329A1CE142DF005ED144 /* Helpers.swift in Sources */,
-				D5C6299C1C3A8BDA007F7B7C /* ViewModelSpec.swift in Sources */,
+				BD0428961D94537C00310968 /* ViewModelSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
