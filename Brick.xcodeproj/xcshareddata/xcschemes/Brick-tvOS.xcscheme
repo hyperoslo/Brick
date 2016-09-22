@@ -20,20 +20,6 @@
                ReferencedContainer = "container:Brick.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BDBA5F1C1D940F09003A5C6B"
-               BuildableName = "Brick-tvOSTests.xctest"
-               BlueprintName = "Brick-tvOSTests"
-               ReferencedContainer = "container:Brick.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction

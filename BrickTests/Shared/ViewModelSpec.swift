@@ -1,6 +1,7 @@
 @testable import Brick
 import Quick
 import Nimble
+import Fakery
 
 class ViewModelSpec: QuickSpec {
 
@@ -8,16 +9,17 @@ class ViewModelSpec: QuickSpec {
     describe("ViewModel") {
       var viewModel: ViewModel!
       var data: [String : AnyObject]!
+      let faker = Faker()
 
       beforeEach {
         data = [
-          "title": "foobar",
-          "subtitle": "foobaz",
-          "image" : "internet://image",
-          "kind" : "list",
-          "action" : "some-action",
+          "title": faker.lorem.paragraph(),
+          "subtitle": faker.lorem.paragraph(),
+          "image" : faker.internet.image(),
+          "kind" : faker.team.name(),
+          "action" : faker.internet.ipV6Address(),
           "meta" : [
-            "domain" : "domain-name"
+            "domain" : faker.internet.domainName()
           ]
         ]
       }
