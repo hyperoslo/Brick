@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BD6D7AD91CBA754000FBF0BD /* Sugar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD6D7AD71CBA754000FBF0BD /* Sugar.framework */; };
 		BD6D7ADA1CBA754000FBF0BD /* Tailor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD6D7AD81CBA754000FBF0BD /* Tailor.framework */; };
-		BD6D7ADD1CBA754900FBF0BD /* Sugar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD6D7ADB1CBA754900FBF0BD /* Sugar.framework */; };
 		BD6D7ADE1CBA754900FBF0BD /* Tailor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD6D7ADC1CBA754900FBF0BD /* Tailor.framework */; };
 		BD6D7AE01CBA768200FBF0BD /* Fakery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD6D7ADF1CBA768200FBF0BD /* Fakery.framework */; };
 		BD6D7AE21CBA768A00FBF0BD /* Fakery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD6D7AE11CBA768A00FBF0BD /* Fakery.framework */; };
@@ -53,9 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BD6D7AD71CBA754000FBF0BD /* Sugar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sugar.framework; path = Carthage/Build/iOS/Sugar.framework; sourceTree = "<group>"; };
 		BD6D7AD81CBA754000FBF0BD /* Tailor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Tailor.framework; path = Carthage/Build/iOS/Tailor.framework; sourceTree = "<group>"; };
-		BD6D7ADB1CBA754900FBF0BD /* Sugar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sugar.framework; path = Carthage/Build/Mac/Sugar.framework; sourceTree = "<group>"; };
 		BD6D7ADC1CBA754900FBF0BD /* Tailor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Tailor.framework; path = Carthage/Build/Mac/Tailor.framework; sourceTree = "<group>"; };
 		BD6D7ADF1CBA768200FBF0BD /* Fakery.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fakery.framework; path = Carthage/Build/Mac/Fakery.framework; sourceTree = "<group>"; };
 		BD6D7AE11CBA768A00FBF0BD /* Fakery.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fakery.framework; path = Carthage/Build/iOS/Fakery.framework; sourceTree = "<group>"; };
@@ -87,7 +83,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD6D7AD91CBA754000FBF0BD /* Sugar.framework in Frameworks */,
 				BD6D7ADA1CBA754000FBF0BD /* Tailor.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -107,7 +102,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD6D7ADD1CBA754900FBF0BD /* Sugar.framework in Frameworks */,
 				BD6D7ADE1CBA754900FBF0BD /* Tailor.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,9 +213,7 @@
 			children = (
 				BD6D7AE11CBA768A00FBF0BD /* Fakery.framework */,
 				BD6D7ADF1CBA768200FBF0BD /* Fakery.framework */,
-				BD6D7ADB1CBA754900FBF0BD /* Sugar.framework */,
 				BD6D7ADC1CBA754900FBF0BD /* Tailor.framework */,
-				BD6D7AD71CBA754000FBF0BD /* Sugar.framework */,
 				BD6D7AD81CBA754000FBF0BD /* Tailor.framework */,
 				D5C629791C3A879F007F7B7C /* Quick.framework */,
 				D5C6297A1C3A879F007F7B7C /* Nimble.framework */,
@@ -409,7 +401,6 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Sugar.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Tailor.framework",
 			);
 			outputPaths = (
@@ -424,7 +415,6 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/Mac/Sugar.framework",
 				"$(SRCROOT)/Carthage/Build/Mac/Tailor.framework",
 			);
 			outputPaths = (

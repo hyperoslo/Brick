@@ -5,7 +5,6 @@
 #endif
 
 import Tailor
-import Sugar
 
 /**
  A value type struct, it conforms to the Mappable protocol so that it can be instantiated with JSON
