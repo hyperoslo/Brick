@@ -1,5 +1,4 @@
 import Tailor
-import Sugar
 
 struct Meta {
   var id = 0
