@@ -7,7 +7,7 @@ before_install:
 - travis_wait 35 carthage bootstrap --platform iOS,Mac
 
 script:
-- xcodebuild clean build -project Brick.xcodeproj -scheme Brick-iOS -sdk iphonesimulator -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6,OS=9.3'
+- xcodebuild clean build -project Brick.xcodeproj -scheme Brick-iOS -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6,OS=9.3'
 - xcodebuild test -project Brick.xcodeproj -scheme Brick-iOS -sdk iphonesimulator
 - xcodebuild clean build -project Brick.xcodeproj -scheme Brick-Mac -sdk macosx
 - xcodebuild test -project Brick.xcodeproj -scheme Brick-Mac -sdk macosx
