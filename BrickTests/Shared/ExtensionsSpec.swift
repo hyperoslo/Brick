@@ -1,7 +1,6 @@
 @testable import Brick
 import Quick
 import Nimble
-import Fakery
 
 class ExtensionsSpec: QuickSpec {
 
