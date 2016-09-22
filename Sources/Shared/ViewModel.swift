@@ -52,14 +52,14 @@ public struct ViewModel: Mappable {
   /// The width and height of the view model, usually calculated and updated by the UI component
   public var size = CGSize(width: 0, height: 0)
   /// A collection of items used for composition
-  public var children: JSONArray = []
+  public var children: [[String : AnyObject]] = []
   /// A key-value dictionary for any additional information
   public var meta = [String : AnyObject]()
   /// A key-value dictionary for related view models
   public var relations = [String : [ViewModel]]()
 
   /// A dictionary representation of the view model
-  public var dictionary: JSONDictionary {
+  public var dictionary: [String : AnyObject] {
     var dictionary: [String: AnyObject] = [
       Key.Index.string : index,
       Key.Kind.string : kind,
@@ -84,10 +84,10 @@ public struct ViewModel: Mappable {
 
     dictionary[Key.Children.string] = children
 
-    var relationItems = [String : [JSONDictionary]]()
+    var relationItems = [String : [[String : AnyObject]]]()
 
     relations.forEach { key, array in
-      if relationItems[key] == nil { relationItems[key] = [JSONDictionary]() }
+      if relationItems[key] == nil { relationItems[key] = [[String : AnyObject]]() }
       array.forEach { relationItems[key]?.append($0.dictionary) }
     }
 
@@ -105,7 +105,7 @@ public struct ViewModel: Mappable {
 
    - Parameter map: A JSON dictionary
    */
-  public init(_ map: JSONDictionary) {
+  public init(_ map: [String : AnyObject]) {
     index    <- map.property(.Index)
     identifier = map.property(.Identifier)
     title    <- map.property(.Title)
@@ -114,13 +114,13 @@ public struct ViewModel: Mappable {
     kind     <- map.property(.Type) ?? map.property(.Kind)
     action   <- map.property(.Action) ?? nil
     meta     <- map.property(.Meta)
-    children = map[.Children] as? JSONArray ?? []
+    children = map[.Children] as? [[String : AnyObject]] ?? []
 
     if let relation = map[.Relations] as? [String : [ViewModel]] {
       relations = relation
     }
 
-    if let relations = map[.Relations] as? [String : [JSONDictionary]] {
+    if let relations = map[.Relations] as? [String : [[String : AnyObject]]] {
       var newRelations = [String : [ViewModel]]()
       relations.forEach { key, array in
         if newRelations[key] == nil { newRelations[key] = [ViewModel]() }
@@ -131,8 +131,8 @@ public struct ViewModel: Mappable {
     }
 
     size = CGSize(
-      width:  ((map[.Size] as? JSONDictionary)?[.Width] as? Int) ?? 0,
-      height: ((map[.Size] as? JSONDictionary)?[.Height] as? Int) ?? 0
+      width:  ((map[.Size] as? [String : AnyObject])?[.Width] as? Int) ?? 0,
+      height: ((map[.Size] as? [String : AnyObject])?[.Height] as? Int) ?? 0
     )
   }
 
@@ -143,7 +143,7 @@ public struct ViewModel: Mappable {
    - Parameter subtitle: The subtitle string for the view model, default to empty string
    - Parameter image: Image name or URL as a string, default to empty string
    */
-  public init(identifier: Int? = nil, title: String = "", subtitle: String = "", image: String = "", kind: StringConvertible = "", action: String? = nil, size: CGSize = CGSize(width: 0, height: 0), meta: JSONDictionary = [:], relations: [String : [ViewModel]] = [:]) {
+  public init(identifier: Int? = nil, title: String = "", subtitle: String = "", image: String = "", kind: StringConvertible = "", action: String? = nil, size: CGSize = CGSize(width: 0, height: 0), meta: [String : AnyObject] = [:], relations: [String : [ViewModel]] = [:]) {
     self.identifier = identifier
     self.title = title
     self.subtitle = subtitle

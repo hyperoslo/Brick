@@ -7,7 +7,7 @@ struct Meta {
 
 extension Meta: Mappable {
 
-  init(_ map: JSONDictionary) {
+  init(_ map: [String : AnyObject]) {
     id <- map.property("id")
     name <- map.property("name")
   }
