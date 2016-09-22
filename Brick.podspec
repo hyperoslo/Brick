@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = "Brick"
   s.summary          = "A generic view model for both basic and complex scenarios."
-  s.version          = "0.9.2"
+  s.version          = "0.9.3"
   s.homepage         = "https://github.com/hyperoslo/Brick"
   s.license          = 'MIT'
   s.author           = { "Hyper Interaktiv AS" => "ios@hyper.no" }
@@ -20,9 +20,5 @@ Pod::Spec.new do |s|
   s.osx.source_files = 'Sources/{Mac,Shared}/**/*'
   s.tvos.source_files = 'Sources/{iOS,Shared}/**/*'
 
-  # s.ios.frameworks = 'UIKit', 'Foundation'
-  # s.osx.frameworks = 'Cocoa', 'Foundation'
-
-  s.dependency 'Sugar', '~> 1.0'
   s.dependency 'Tailor'
 end
