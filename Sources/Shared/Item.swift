@@ -103,7 +103,7 @@ public struct Item: Mappable {
   /**
    Initialization a new instance of a Item and map it to a JSON dictionary
 
-   - Parameter map: A JSON dictionary
+   - parameter map: A JSON dictionary
    */
   public init(_ map: [String : AnyObject]) {
     index    <- map.property(.Index)
@@ -139,9 +139,9 @@ public struct Item: Mappable {
   /**
    Initialization a new instance of a Item and map it to a JSON dictionary
 
-   - Parameter title: The title string for the view model, defaults to empty string
-   - Parameter subtitle: The subtitle string for the view model, default to empty string
-   - Parameter image: Image name or URL as a string, default to empty string
+   - parameter title: The title string for the view model, defaults to empty string
+   - parameter subtitle: The subtitle string for the view model, default to empty string
+   - parameter image: Image name or URL as a string, default to empty string
    */
   public init(identifier: Int? = nil, title: String = "", subtitle: String = "", image: String = "", kind: StringConvertible = "", action: String? = nil, size: CGSize = CGSize(width: 0, height: 0), meta: [String : AnyObject] = [:], relations: [String : [Item]] = [:]) {
     self.identifier = identifier
@@ -158,9 +158,9 @@ public struct Item: Mappable {
   /**
    Initialization a new instance of a Item and map it to a JSON dictionary
 
-   - Parameter title: The title string for the view model, defaults to empty string
-   - Parameter subtitle: The subtitle string for the view model, default to empty string
-   - Parameter image: Image name or URL as a string, default to empty string
+   - parameter title: The title string for the view model, defaults to empty string
+   - parameter subtitle: The subtitle string for the view model, default to empty string
+   - parameter image: Image name or URL as a string, default to empty string
    */
   public init(identifier: Int? = nil, title: String = "", subtitle: String = "", image: String = "", kind: StringConvertible = "", action: String? = nil, size: CGSize = CGSize(width: 0, height: 0), meta: Mappable, relations: [String : [Item]] = [:]) {
     self.init(identifier: identifier, title: title, subtitle: subtitle, image: image, kind: kind, action: action,
@@ -172,9 +172,10 @@ public struct Item: Mappable {
   /**
    A generic convenience method for resolving meta attributes
 
-   - Parameter key: String
-   - Parameter defaultValue: A generic value that works as a fallback if the key value object cannot be cast into the generic type
-   - Returns: A generic value based on `defaultValue`, it falls back to `defaultValue` if type casting fails
+   - parameter key: String
+   - parameter defaultValue: A generic value that works as a fallback if the key value object cannot be cast into the generic type
+
+   - returns: A generic value based on `defaultValue`, it falls back to `defaultValue` if type casting fails
    */
   public func meta<T>(key: String, _ defaultValue: T) -> T {
     return meta[key] as? T ?? defaultValue
@@ -183,9 +184,10 @@ public struct Item: Mappable {
   /**
    A generic convenience method for resolving meta attributes
 
-   - Parameter key: String
-   - Parameter type: A generic type used for casting the meta property to a specific value or reference type
-   - Returns: An optional generic value based on `type`
+   - parameter key: String
+   - parameter type: A generic type used for casting the meta property to a specific value or reference type
+
+   - returns: An optional generic value based on `type`
    */
   public func meta<T>(key: String, type: T.Type) -> T? {
     return meta[key] as? T
@@ -194,7 +196,7 @@ public struct Item: Mappable {
   /**
    A generic convenience method for resolving meta instance
 
-   - Returns: A generic meta instance based on `type`
+   - returns: A generic meta instance based on `type`
    */
   public func metaInstance<T: Mappable>() -> T {
     return T(meta)
@@ -203,8 +205,8 @@ public struct Item: Mappable {
   /**
    A convenience lookup method for resolving view model relations
 
-   - Parameter key: String
-   - Parameter index: The index of the object inside of `self.relations`
+   - parameter key: String
+   - parameter index: The index of the object inside of `self.relations`
    */
   public func relation(key: String, _ index: Int) -> Item? {
     if let items = relations[key] where index < items.count {
@@ -217,7 +219,7 @@ public struct Item: Mappable {
   /**
    A method for mutating the kind of a view model
 
-   - Parameter kind: A StringConvertible object
+   - parameter kind: A StringConvertible object
    */
   public mutating func update(kind kind: StringConvertible) {
     self.kind = kind.string
@@ -226,9 +228,9 @@ public struct Item: Mappable {
 
 /**
  A collection of Item Equatable implementation
- - Parameter lhs: Left hand collection of Items
- - Parameter rhs: Right hand collection of Items
- - Returns: A boolean value, true if both Item are equal
+ - parameter lhs: Left hand collection of Items
+ - parameter rhs: Right hand collection of Items
+ - returns: A boolean value, true if both Item are equal
  */
 public func ==(lhs: [Item], rhs: [Item]) -> Bool {
   var equal = lhs.count == rhs.count
@@ -244,9 +246,9 @@ public func ==(lhs: [Item], rhs: [Item]) -> Bool {
 
 /**
  A collection of Item Equatable implementation to see if they are truly equal
- - Parameter lhs: Left hand collection of Items
- - Parameter rhs: Right hand collection of Items
- - Returns: A boolean value, true if both Item are equal
+ - parameter lhs: Left hand collection of Items
+ - parameter rhs: Right hand collection of Items
+ - returns: A boolean value, true if both Item are equal
  */
 public func ===(lhs: [Item], rhs: [Item]) -> Bool {
   var equal = lhs.count == rhs.count
@@ -265,9 +267,10 @@ public func ===(lhs: [Item], rhs: [Item]) -> Bool {
 
 /**
  Item Equatable implementation
- - Parameter lhs: Left hand Item
- - Parameter rhs: Right hand Item
- - Returns: A boolean value, true if both Item are equal
+ - parameter lhs: Left hand Item
+ - parameter rhs: Right hand Item
+
+ - returns: A boolean value, true if both Item are equal
  */
 public func ==(lhs: Item, rhs: Item) -> Bool {
   return lhs.identifier == rhs.identifier &&
@@ -283,9 +286,10 @@ public func ==(lhs: Item, rhs: Item) -> Bool {
 /**
  Check if Item's are truly equal by including size in comparison
 
- - Parameter lhs: Left hand Item
- - Parameter rhs: Right hand Item
- - Returns: A boolean value, true if both Item are equal
+ - parameter lhs: Left hand Item
+ - parameter rhs: Right hand Item
+
+ - returns: A boolean value, true if both Item are equal
  */
 public func ===(lhs: Item, rhs: Item) -> Bool {
   let equal = lhs.identifier == rhs.identifier &&
@@ -303,9 +307,10 @@ public func ===(lhs: Item, rhs: Item) -> Bool {
 
 /**
  A reverse Equatable implementation for comparing Item's
- - Parameter lhs: Left hand Item
- - Parameter rhs: Right hand Item
- - Returns: A boolean value, false if both Item are equal
+ - parameter lhs: Left hand Item
+ - parameter rhs: Right hand Item
+
+ - returns: A boolean value, false if both Item are equal
  */
 public func !=(lhs: Item, rhs: Item) -> Bool {
   return !(lhs == rhs)

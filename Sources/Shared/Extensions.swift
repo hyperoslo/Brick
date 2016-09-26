@@ -19,8 +19,9 @@ public extension _ArrayType where Generator.Element == Item {
 extension Dictionary where Key: StringLiteralConvertible {
 
   /**
-   - Parameter name: The name of the property that you want to map
-   - Returns: A generic type if casting succeeds, otherwise it returns nil
+   - parameter name: The name of the property that you want to map
+
+   - returns: A generic type if casting succeeds, otherwise it returns nil
    */
   func property<T>(name: Item.Key) -> T? {
     return property(name.string)
@@ -29,8 +30,9 @@ extension Dictionary where Key: StringLiteralConvertible {
   /**
    Access the value associated with the given key.
 
-   - Parameter key: The key associated with the value you want to get
-   - Returns: The value associated with the given key
+   - parameter key: The key associated with the value you want to get
+
+   - returns: The value associated with the given key
    */
   subscript(key: Item.Key) -> Value? {
     set(value) {
@@ -49,7 +51,7 @@ extension Dictionary where Key: StringLiteralConvertible {
 extension Mappable {
 
   /**
-   - Returns: A key-value dictionary.
+   - returns: A key-value dictionary.
    */
   var metaProperties: [String : AnyObject] {
     var properties = [String : AnyObject]()

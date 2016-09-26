@@ -6,7 +6,7 @@ public protocol ItemConfigurable: class {
   /**
    A configure method that is used on reference types that can be configured using a view model
 
-   - Parameter item: A inout Item so that the ItemConfigurable object can configure the view model width and height based on its UI components
+   - parameter item: A inout Item so that the ItemConfigurable object can configure the view model width and height based on its UI components
   */
   func configure(inout item: Item)
 }
