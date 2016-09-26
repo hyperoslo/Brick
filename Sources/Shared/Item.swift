@@ -9,7 +9,7 @@ import Tailor
 /**
  A value type struct, it conforms to the Mappable protocol so that it can be instantiated with JSON
  */
-public struct ViewModel: Mappable {
+public struct Item: Mappable {
 
   /**
    An enum with all the string keys used in the view model
@@ -35,19 +35,19 @@ public struct ViewModel: Mappable {
     }
   }
 
-  /// The index of the ViewModel when appearing in a list, should be computed and continuously updated by the data source
+  /// The index of the Item when appearing in a list, should be computed and continuously updated by the data source
   public var index = 0
   /// An optional identifier for your data
   public var identifier: Int?
-  /// The main representation of the ViewModel
+  /// The main representation of the Item
   public var title = ""
-  /// Supplementary information to the ViewModel
+  /// Supplementary information to the Item
   public var subtitle = ""
-  /// A visual representation of the ViewModel, usually a string URL or image name
+  /// A visual representation of the Item, usually a string URL or image name
   public var image = ""
-  /// Determines what kind of UI should be used to represent the ViewModel
+  /// Determines what kind of UI should be used to represent the Item
   public var kind: String = ""
-  /// A string representation of what should happens when a ViewModel is tapped, usually a URN or URL
+  /// A string representation of what should happens when a Item is tapped, usually a URN or URL
   public var action: String?
   /// The width and height of the view model, usually calculated and updated by the UI component
   public var size = CGSize(width: 0, height: 0)
@@ -56,7 +56,7 @@ public struct ViewModel: Mappable {
   /// A key-value dictionary for any additional information
   public var meta = [String : AnyObject]()
   /// A key-value dictionary for related view models
-  public var relations = [String : [ViewModel]]()
+  public var relations = [String : [Item]]()
 
   /// A dictionary representation of the view model
   public var dictionary: [String : AnyObject] {
@@ -101,7 +101,7 @@ public struct ViewModel: Mappable {
   // MARK: - Initialization
 
   /**
-   Initialization a new instance of a ViewModel and map it to a JSON dictionary
+   Initialization a new instance of a Item and map it to a JSON dictionary
 
    - Parameter map: A JSON dictionary
    */
@@ -116,15 +116,15 @@ public struct ViewModel: Mappable {
     meta     <- map.property(.Meta)
     children = map[.Children] as? [[String : AnyObject]] ?? []
 
-    if let relation = map[.Relations] as? [String : [ViewModel]] {
+    if let relation = map[.Relations] as? [String : [Item]] {
       relations = relation
     }
 
     if let relations = map[.Relations] as? [String : [[String : AnyObject]]] {
-      var newRelations = [String : [ViewModel]]()
+      var newRelations = [String : [Item]]()
       relations.forEach { key, array in
-        if newRelations[key] == nil { newRelations[key] = [ViewModel]() }
-        array.forEach { newRelations[key]?.append(ViewModel($0)) }
+        if newRelations[key] == nil { newRelations[key] = [Item]() }
+        array.forEach { newRelations[key]?.append(Item($0)) }
 
         self.relations = newRelations
       }
@@ -137,13 +137,13 @@ public struct ViewModel: Mappable {
   }
 
   /**
-   Initialization a new instance of a ViewModel and map it to a JSON dictionary
+   Initialization a new instance of a Item and map it to a JSON dictionary
 
    - Parameter title: The title string for the view model, defaults to empty string
    - Parameter subtitle: The subtitle string for the view model, default to empty string
    - Parameter image: Image name or URL as a string, default to empty string
    */
-  public init(identifier: Int? = nil, title: String = "", subtitle: String = "", image: String = "", kind: StringConvertible = "", action: String? = nil, size: CGSize = CGSize(width: 0, height: 0), meta: [String : AnyObject] = [:], relations: [String : [ViewModel]] = [:]) {
+  public init(identifier: Int? = nil, title: String = "", subtitle: String = "", image: String = "", kind: StringConvertible = "", action: String? = nil, size: CGSize = CGSize(width: 0, height: 0), meta: [String : AnyObject] = [:], relations: [String : [Item]] = [:]) {
     self.identifier = identifier
     self.title = title
     self.subtitle = subtitle
@@ -156,13 +156,13 @@ public struct ViewModel: Mappable {
   }
 
   /**
-   Initialization a new instance of a ViewModel and map it to a JSON dictionary
+   Initialization a new instance of a Item and map it to a JSON dictionary
 
    - Parameter title: The title string for the view model, defaults to empty string
    - Parameter subtitle: The subtitle string for the view model, default to empty string
    - Parameter image: Image name or URL as a string, default to empty string
    */
-  public init(identifier: Int? = nil, title: String = "", subtitle: String = "", image: String = "", kind: StringConvertible = "", action: String? = nil, size: CGSize = CGSize(width: 0, height: 0), meta: Mappable, relations: [String : [ViewModel]] = [:]) {
+  public init(identifier: Int? = nil, title: String = "", subtitle: String = "", image: String = "", kind: StringConvertible = "", action: String? = nil, size: CGSize = CGSize(width: 0, height: 0), meta: Mappable, relations: [String : [Item]] = [:]) {
     self.init(identifier: identifier, title: title, subtitle: subtitle, image: image, kind: kind, action: action,
               size: size, meta: meta.metaProperties, relations: relations)
   }
@@ -206,7 +206,7 @@ public struct ViewModel: Mappable {
    - Parameter key: String
    - Parameter index: The index of the object inside of `self.relations`
    */
-  public func relation(key: String, _ index: Int) -> ViewModel? {
+  public func relation(key: String, _ index: Int) -> Item? {
     if let items = relations[key] where index < items.count {
       return items[index]
     } else {
@@ -225,12 +225,12 @@ public struct ViewModel: Mappable {
 }
 
 /**
- A collection of ViewModel Equatable implementation
- - Parameter lhs: Left hand collection of ViewModels
- - Parameter rhs: Right hand collection of ViewModels
- - Returns: A boolean value, true if both ViewModel are equal
+ A collection of Item Equatable implementation
+ - Parameter lhs: Left hand collection of Items
+ - Parameter rhs: Right hand collection of Items
+ - Returns: A boolean value, true if both Item are equal
  */
-public func ==(lhs: [ViewModel], rhs: [ViewModel]) -> Bool {
+public func ==(lhs: [Item], rhs: [Item]) -> Bool {
   var equal = lhs.count == rhs.count
 
   if !equal { return false }
@@ -243,12 +243,12 @@ public func ==(lhs: [ViewModel], rhs: [ViewModel]) -> Bool {
 }
 
 /**
- A collection of ViewModel Equatable implementation to see if they are truly equal
- - Parameter lhs: Left hand collection of ViewModels
- - Parameter rhs: Right hand collection of ViewModels
- - Returns: A boolean value, true if both ViewModel are equal
+ A collection of Item Equatable implementation to see if they are truly equal
+ - Parameter lhs: Left hand collection of Items
+ - Parameter rhs: Right hand collection of Items
+ - Returns: A boolean value, true if both Item are equal
  */
-public func ===(lhs: [ViewModel], rhs: [ViewModel]) -> Bool {
+public func ===(lhs: [Item], rhs: [Item]) -> Bool {
   var equal = lhs.count == rhs.count
 
   if !equal { return false }
@@ -264,12 +264,12 @@ public func ===(lhs: [ViewModel], rhs: [ViewModel]) -> Bool {
 }
 
 /**
- ViewModel Equatable implementation
- - Parameter lhs: Left hand ViewModel
- - Parameter rhs: Right hand ViewModel
- - Returns: A boolean value, true if both ViewModel are equal
+ Item Equatable implementation
+ - Parameter lhs: Left hand Item
+ - Parameter rhs: Right hand Item
+ - Returns: A boolean value, true if both Item are equal
  */
-public func ==(lhs: ViewModel, rhs: ViewModel) -> Bool {
+public func ==(lhs: Item, rhs: Item) -> Bool {
   return lhs.identifier == rhs.identifier &&
     lhs.title == rhs.title &&
     lhs.subtitle == rhs.subtitle &&
@@ -281,13 +281,13 @@ public func ==(lhs: ViewModel, rhs: ViewModel) -> Bool {
 }
 
 /**
- Check if ViewModel's are truly equal by including size in comparison
+ Check if Item's are truly equal by including size in comparison
 
- - Parameter lhs: Left hand ViewModel
- - Parameter rhs: Right hand ViewModel
- - Returns: A boolean value, true if both ViewModel are equal
+ - Parameter lhs: Left hand Item
+ - Parameter rhs: Right hand Item
+ - Returns: A boolean value, true if both Item are equal
  */
-public func ===(lhs: ViewModel, rhs: ViewModel) -> Bool {
+public func ===(lhs: Item, rhs: Item) -> Bool {
   let equal = lhs.identifier == rhs.identifier &&
     lhs.title == rhs.title &&
     lhs.subtitle == rhs.subtitle &&
@@ -302,16 +302,16 @@ public func ===(lhs: ViewModel, rhs: ViewModel) -> Bool {
 }
 
 /**
- A reverse Equatable implementation for comparing ViewModel's
- - Parameter lhs: Left hand ViewModel
- - Parameter rhs: Right hand ViewModel
- - Returns: A boolean value, false if both ViewModel are equal
+ A reverse Equatable implementation for comparing Item's
+ - Parameter lhs: Left hand Item
+ - Parameter rhs: Right hand Item
+ - Returns: A boolean value, false if both Item are equal
  */
-public func !=(lhs: ViewModel, rhs: ViewModel) -> Bool {
+public func !=(lhs: Item, rhs: Item) -> Bool {
   return !(lhs == rhs)
 }
 
-func compareRelations(lhs: ViewModel, _ rhs: ViewModel) -> Bool {
+func compareRelations(lhs: Item, _ rhs: Item) -> Bool {
   guard lhs.relations.count == rhs.relations.count else {
     return false
   }

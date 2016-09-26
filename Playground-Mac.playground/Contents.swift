@@ -3,7 +3,7 @@
 import Cocoa
 import Brick
 
-let item = ViewModel(
+let item = Item(
   title: "John Hyperseed",
   subtitle: "Build machine",
   meta: [
