@@ -16,7 +16,7 @@ Brick is a generic view model for both basic and complex scenarios.
 Mapping a basic table view cells is as easy as pie, if you have more properties, you can use the `meta` dictionary to add all additional properties that you might need. It also supports relations so that you can nest view models inside of view models.
 
 ```swift
-public struct ViewModel: Mappable {
+public struct Item: Mappable {
   public var index = 0
   public var title = ""
   public var subtitle = ""
@@ -48,7 +48,7 @@ This is used for extra data that you might need access to inside of your view, i
 ## Usage
 
 ```swift
-let item = ViewModel(
+let item = Item(
   title: "John Hyperseed",
   subtitle: "Build machine",
   meta: [

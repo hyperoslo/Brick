@@ -2,7 +2,7 @@ import Tailor
 
 // MARK: - Array
 
-public extension _ArrayType where Generator.Element == ViewModel {
+public extension _ArrayType where Generator.Element == Item {
 
   mutating func refreshIndexes() {
     enumerate().forEach {
@@ -19,20 +19,22 @@ public extension _ArrayType where Generator.Element == ViewModel {
 extension Dictionary where Key: StringLiteralConvertible {
 
   /**
-   - Parameter name: The name of the property that you want to map
-   - Returns: A generic type if casting succeeds, otherwise it returns nil
+   - parameter name: The name of the property that you want to map
+
+   - returns: A generic type if casting succeeds, otherwise it returns nil
    */
-  func property<T>(name: ViewModel.Key) -> T? {
+  func property<T>(name: Item.Key) -> T? {
     return property(name.string)
   }
 
   /**
    Access the value associated with the given key.
 
-   - Parameter key: The key associated with the value you want to get
-   - Returns: The value associated with the given key
+   - parameter key: The key associated with the value you want to get
+
+   - returns: The value associated with the given key
    */
-  subscript(key: ViewModel.Key) -> Value? {
+  subscript(key: Item.Key) -> Value? {
     set(value) {
       guard let key = key.string as? Key else { return }
       self[key] = value
@@ -49,7 +51,7 @@ extension Dictionary where Key: StringLiteralConvertible {
 extension Mappable {
 
   /**
-   - Returns: A key-value dictionary.
+   - returns: A key-value dictionary.
    */
   var metaProperties: [String : AnyObject] {
     var properties = [String : AnyObject]()

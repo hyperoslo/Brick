@@ -7,11 +7,11 @@ class ExtensionsSpec: QuickSpec {
 
   override func spec() {
     describe("Array+Brick") {
-      var items = [ViewModel]()
+      var items = [Item]()
 
       beforeEach {
         for index in 0..<10 {
-          var item = ViewModel(title: "Test")
+          var item = Item(title: "Test")
           item.index = 9 - index
 
           items.append(item)
