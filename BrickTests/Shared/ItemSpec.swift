@@ -61,11 +61,11 @@ class ItemSpec: QuickSpec {
           expect(item.relations["Items"]!.last!.kind).to(equal(data["kind"] as? String))
           expect(item.relations["Items"]!.last!.action).to(equal(data["action"] as? String))
 
-          let Item2 = item
-          expect(item == Item2).to(beTrue())
+          let item2 = item
+          expect(item == item2).to(beTrue())
 
           item.relations["Items"]![2].title = "new"
-          expect(item == Item2).to(beFalse())
+          expect(item == item2).to(beFalse())
         }
       }
 
