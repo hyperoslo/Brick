@@ -26,7 +26,7 @@ class ItemSpec: QuickSpec {
 
       describe("#mapping") {
         beforeEach {
-          item = item(data)
+          item = Item(data)
         }
 
         it("it creates an instance") {
@@ -46,7 +46,7 @@ class ItemSpec: QuickSpec {
       describe("#relations") {
         it("sets relations") {
           data["relations"] = ["Items" : [data, data, data]]
-          item = item(data)
+          item = Item(data)
 
           expect(item.relations["Items"]!.count).to(equal(3))
           expect(item.relations["Items"]!.first!.title).to(equal(data["title"] as? String))
@@ -71,14 +71,14 @@ class ItemSpec: QuickSpec {
 
       describe("#meta") {
         it("resolves meta data created from JSON") {
-          item = item(data)
+          item = Item(data)
           expect(item.meta("domain", "")).to(equal(data["meta"]!["domain"]))
         }
 
         it("resolves meta data created from object") {
           var data = ["id": 11, "name": "Name"]
 
-          item = item(meta: Meta(data))
+          item = Item(meta: Meta(data))
           expect(item.meta("id", 0)).to(equal(data["id"]))
           expect(item.meta("name", "")).to(equal(data["name"]))
         }
@@ -87,7 +87,7 @@ class ItemSpec: QuickSpec {
       describe("#metaInstance") {
         it("resolves meta data created from object") {
           var data = ["id": 11, "name": "Name"]
-          item = item(meta: Meta(data))
+          item = Item(meta: Meta(data))
           let result: Meta = item.metaInstance()
 
           expect(result.id).to(equal(data["id"]))
@@ -97,41 +97,41 @@ class ItemSpec: QuickSpec {
 
       describe("#equality") {
         it("compares two view models that are equal using identifier") {
-          let left = item(identifier: "foo".hashValue)
-          let right = item(identifier: "foo".hashValue)
+          let left = Item(identifier: "foo".hashValue)
+          let right = Item(identifier: "foo".hashValue)
 
           expect(left === right).to(beTrue())
         }
 
         it("compares two view models that are not equal using identifier") {
-          let left = item(identifier: "foo".hashValue)
-          let right = item(identifier: "bar".hashValue)
+          let left = Item(identifier: "foo".hashValue)
+          let right = Item(identifier: "bar".hashValue)
 
           expect(left === right).to(beFalse())
         }
 
         it("compares two view models that are equal") {
-          let left = item(title: "foo", size: CGSize(width: 40, height: 40))
-          let right = item(title: "foo", size: CGSize(width: 40, height: 40))
+          let left = Item(title: "foo", size: CGSize(width: 40, height: 40))
+          let right = Item(title: "foo", size: CGSize(width: 40, height: 40))
 
           expect(left === right).to(beTrue())
         }
 
         it("compares two unequal view model") {
-          let left = item(title: "foo", size: CGSize(width: 40, height: 40))
-          let right = item(title: "foo", size: CGSize(width: 60, height: 60))
+          let left = Item(title: "foo", size: CGSize(width: 40, height: 40))
+          let right = Item(title: "foo", size: CGSize(width: 60, height: 60))
 
           expect(left === right).to(beFalse())
         }
 
         it("compares a collection of view models that are equal") {
           let left = [
-            item(title: "foo", size: CGSize(width: 40, height: 40)),
-            item(title: "foo", size: CGSize(width: 40, height: 40))
+            Item(title: "foo", size: CGSize(width: 40, height: 40)),
+            Item(title: "foo", size: CGSize(width: 40, height: 40))
           ]
           let right = [
-            item(title: "foo", size: CGSize(width: 40, height: 40)),
-            item(title: "foo", size: CGSize(width: 40, height: 40))
+            Item(title: "foo", size: CGSize(width: 40, height: 40)),
+            Item(title: "foo", size: CGSize(width: 40, height: 40))
           ]
 
           expect(left === right).to(beTrue())
@@ -139,12 +139,12 @@ class ItemSpec: QuickSpec {
 
         it("compares a collection of view models that are not equal") {
           let left = [
-            item(title: "foo", size: CGSize(width: 40, height: 40)),
-            item(title: "foo", size: CGSize(width: 60, height: 40))
+            Item(title: "foo", size: CGSize(width: 40, height: 40)),
+            Item(title: "foo", size: CGSize(width: 60, height: 40))
           ]
           let right = [
-            item(title: "foo", size: CGSize(width: 40, height: 40)),
-            item(title: "foo", size: CGSize(width: 40, height: 40))
+            Item(title: "foo", size: CGSize(width: 40, height: 40)),
+            Item(title: "foo", size: CGSize(width: 40, height: 40))
           ]
 
           expect(left === right).to(beFalse())
@@ -154,11 +154,11 @@ class ItemSpec: QuickSpec {
       describe("#dictionary") {
         beforeEach {
           data["relations"] = ["Items" : [data, data]]
-          item = item(data)
+          item = Item(data)
         }
 
         it("returns a dictionary representation of the view model") {
-          let newItem = item(item.dictionary)
+          let newItem = Item(item.dictionary)
 
           expect(newItem == item).to(beTrue())
           expect(newItem.relations["Items"]!.count).to(equal(item.relations["Items"]!.count))
@@ -171,7 +171,7 @@ class ItemSpec: QuickSpec {
 
       describe("#update:kind") {
         beforeEach {
-          item = item(data)
+          item = Item(data)
         }
 
         it("updates kind") {
@@ -183,18 +183,18 @@ class ItemSpec: QuickSpec {
       describe("#compareRelations") {
         beforeEach {
           data["relations"] = ["Items" : [data, data, data]]
-          item = item(data)
+          item = Item(data)
         }
 
         it("compare relations properly") {
-          var Item2 = item(data)
+          var Item2 = Item(data)
           expect(compareRelations(item, Item2)).to(beTrue())
 
           Item2.relations["Items"]![2].title = "new"
           expect(compareRelations(item, Item2)).to(beFalse())
 
           data["relations"] = ["Items" : [data, data]]
-          Item2 = item(data)
+          Item2 = Item(data)
           expect(compareRelations(item, Item2)).to(beFalse())
         }
       }
