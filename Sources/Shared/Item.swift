@@ -32,7 +32,7 @@ public struct Item: Mappable {
     case Height
 
     var string: String {
-      return rawValue.lowercaseString
+      return rawValue.lowercased()
     }
   }
 
@@ -64,29 +64,29 @@ public struct Item: Mappable {
   /// A dictionary representation of the view model
   public var dictionary: [String : AnyObject] {
     var dictionary: [String: AnyObject] = [
-      Key.Index.string : index,
-      Key.Kind.string : kind,
+      Key.Index.string : index as AnyObject,
+      Key.Kind.string : kind as AnyObject,
       Key.Size.string : [
         Key.Width.string : size.width,
         Key.Height.string : size.height
       ]
     ]
 
-    if !title.isEmpty { dictionary[Key.Title.string] = title }
-    if !subtitle.isEmpty { dictionary[Key.Subtitle.string] = subtitle }
-    if !text.isEmpty { dictionary[Key.Text.string] = text }
-    if !image.isEmpty { dictionary[Key.Image.string] = image }
-    if !meta.isEmpty { dictionary[Key.Meta.string] = meta }
+    if !title.isEmpty { dictionary[Key.Title.string] = title as AnyObject? }
+    if !subtitle.isEmpty { dictionary[Key.Subtitle.string] = subtitle as AnyObject? }
+    if !text.isEmpty { dictionary[Key.Text.string] = text as AnyObject? }
+    if !image.isEmpty { dictionary[Key.Image.string] = image as AnyObject? }
+    if !meta.isEmpty { dictionary[Key.Meta.string] = meta as AnyObject? }
 
     if let identifier = identifier {
-      dictionary[Key.Identifier.string] = identifier
+      dictionary[Key.Identifier.string] = identifier as AnyObject?
     }
 
     if let action = action {
-      dictionary[Key.Action.string] = action
+      dictionary[Key.Action.string] = action as AnyObject?
     }
 
-    dictionary[Key.Children.string] = children
+    dictionary[Key.Children.string] = children as AnyObject?
 
     var relationItems = [String : [[String : AnyObject]]]()
 
@@ -96,7 +96,7 @@ public struct Item: Mappable {
     }
 
     if !relationItems.isEmpty {
-      dictionary[Key.Relations.string] = relationItems
+      dictionary[Key.Relations.string] = relationItems as AnyObject?
     }
 
     return dictionary
@@ -209,7 +209,7 @@ public struct Item: Mappable {
 
    - returns: A generic value based on `defaultValue`, it falls back to `defaultValue` if type casting fails
    */
-  public func meta<T>(key: String, _ defaultValue: T) -> T {
+  public func meta<T>(_ key: String, _ defaultValue: T) -> T {
     return meta[key] as? T ?? defaultValue
   }
 
@@ -221,7 +221,7 @@ public struct Item: Mappable {
 
    - returns: An optional generic value based on `type`
    */
-  public func meta<T>(key: String, type: T.Type) -> T? {
+  public func meta<T>(_ key: String, type: T.Type) -> T? {
     return meta[key] as? T
   }
 
@@ -240,8 +240,8 @@ public struct Item: Mappable {
    - parameter key: String
    - parameter index: The index of the object inside of `self.relations`
    */
-  public func relation(key: String, _ index: Int) -> Item? {
-    if let items = relations[key] where index < items.count {
+  public func relation(_ key: String, _ index: Int) -> Item? {
+    if let items = relations[key] , index < items.count {
       return items[index]
     } else {
       return nil
@@ -253,7 +253,7 @@ public struct Item: Mappable {
 
    - parameter kind: A StringConvertible object
    */
-  public mutating func update(kind kind: StringConvertible) {
+  public mutating func update(kind: StringConvertible) {
     self.kind = kind.string
   }
 }
@@ -269,7 +269,7 @@ public func ==(lhs: [Item], rhs: [Item]) -> Bool {
 
   if !equal { return false }
 
-  for (index, item) in lhs.enumerate() {
+  for (index, item) in lhs.enumerated() {
     if item != rhs[index] { equal = false; break }
   }
 
@@ -287,7 +287,7 @@ public func ===(lhs: [Item], rhs: [Item]) -> Bool {
 
   if !equal { return false }
 
-  for (index, item) in lhs.enumerate() {
+  for (index, item) in lhs.enumerated() {
     if !(item === rhs[index]) {
       equal = false
       break
@@ -312,7 +312,7 @@ public func ==(lhs: Item, rhs: Item) -> Bool {
     lhs.image == rhs.image &&
     lhs.kind == rhs.kind &&
     lhs.action == rhs.action &&
-    (lhs.meta as NSDictionary).isEqualToDictionary(rhs.meta) &&
+    (lhs.meta as NSDictionary).isEqual(to: rhs.meta) &&
     compareRelations(lhs, rhs)
 }
 
@@ -333,7 +333,7 @@ public func ===(lhs: Item, rhs: Item) -> Bool {
     lhs.kind == rhs.kind &&
     lhs.action == rhs.action &&
     lhs.size == rhs.size &&
-    (lhs.meta as NSDictionary).isEqualToDictionary(rhs.meta) &&
+    (lhs.meta as NSDictionary).isEqual(to: rhs.meta) &&
     compareRelations(lhs, rhs)
 
   return equal
@@ -350,7 +350,7 @@ public func !=(lhs: Item, rhs: Item) -> Bool {
   return !(lhs == rhs)
 }
 
-func compareRelations(lhs: Item, _ rhs: Item) -> Bool {
+func compareRelations(_ lhs: Item, _ rhs: Item) -> Bool {
   guard lhs.relations.count == rhs.relations.count else {
     return false
   }
@@ -358,7 +358,7 @@ func compareRelations(lhs: Item, _ rhs: Item) -> Bool {
   var equal = true
 
   for (key, value) in lhs.relations {
-    guard let rightValue = rhs.relations[key] where value == rightValue
+    guard let rightValue = rhs.relations[key] , value == rightValue
       else { equal = false; break }
   }
 

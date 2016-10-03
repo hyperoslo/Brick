@@ -2,10 +2,10 @@ import Tailor
 
 // MARK: - Array
 
-public extension _ArrayType where Generator.Element == Item {
+public extension _ArrayType where Iterator.Element == Item {
 
   mutating func refreshIndexes() {
-    enumerate().forEach {
+    enumerated().forEach {
       self[$0.index].index = $0.index
     }
   }
@@ -16,14 +16,14 @@ public extension _ArrayType where Generator.Element == Item {
 /**
  A dictinary extension to work with custom Key type
  */
-extension Dictionary where Key: StringLiteralConvertible {
+extension Dictionary where Key: ExpressibleByStringLiteral {
 
   /**
    - parameter name: The name of the property that you want to map
 
    - returns: A generic type if casting succeeds, otherwise it returns nil
    */
-  func property<T>(name: Item.Key) -> T? {
+  func property<T>(_ name: Item.Key) -> T? {
     return property(name.string)
   }
 
