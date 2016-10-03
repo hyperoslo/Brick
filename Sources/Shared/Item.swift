@@ -19,6 +19,7 @@ public struct Item: Mappable {
     case Identifier
     case Title
     case Subtitle
+    case Text
     case Image
     case Type
     case Kind
@@ -43,6 +44,8 @@ public struct Item: Mappable {
   public var title = ""
   /// Supplementary information to the Item
   public var subtitle = ""
+  /// An Optional text property for a more in-depth description of your Item
+  public var text = ""
   /// A visual representation of the Item, usually a string URL or image name
   public var image = ""
   /// Determines what kind of UI should be used to represent the Item
@@ -71,6 +74,7 @@ public struct Item: Mappable {
 
     if !title.isEmpty { dictionary[Key.Title.string] = title }
     if !subtitle.isEmpty { dictionary[Key.Subtitle.string] = subtitle }
+    if !text.isEmpty { dictionary[Key.Text.string] = text }
     if !image.isEmpty { dictionary[Key.Image.string] = image }
     if !meta.isEmpty { dictionary[Key.Meta.string] = meta }
 
@@ -110,6 +114,7 @@ public struct Item: Mappable {
     identifier = map.property(.Identifier)
     title    <- map.property(.Title)
     subtitle <- map.property(.Subtitle)
+    text     <- map.property(.Text)
     image    <- map.property(.Image)
     kind     <- map.property(.Type) ?? map.property(.Kind)
     action   <- map.property(.Action) ?? nil
@@ -143,10 +148,20 @@ public struct Item: Mappable {
    - parameter subtitle: The subtitle string for the view model, default to empty string
    - parameter image: Image name or URL as a string, default to empty string
    */
-  public init(identifier: Int? = nil, title: String = "", subtitle: String = "", image: String = "", kind: StringConvertible = "", action: String? = nil, size: CGSize = CGSize(width: 0, height: 0), meta: [String : AnyObject] = [:], relations: [String : [Item]] = [:]) {
+  public init(identifier: Int? = nil,
+              title: String = "",
+              subtitle: String = "",
+              text: String = "",
+              image: String = "",
+              kind: StringConvertible = "",
+              action: String? = nil,
+              size: CGSize = CGSize(width: 0, height: 0),
+              meta: [String : AnyObject] = [:],
+              relations: [String : [Item]] = [:]) {
     self.identifier = identifier
     self.title = title
     self.subtitle = subtitle
+    self.text = text
     self.image = image
     self.kind = kind.string
     self.action = action
@@ -162,9 +177,26 @@ public struct Item: Mappable {
    - parameter subtitle: The subtitle string for the view model, default to empty string
    - parameter image: Image name or URL as a string, default to empty string
    */
-  public init(identifier: Int? = nil, title: String = "", subtitle: String = "", image: String = "", kind: StringConvertible = "", action: String? = nil, size: CGSize = CGSize(width: 0, height: 0), meta: Mappable, relations: [String : [Item]] = [:]) {
-    self.init(identifier: identifier, title: title, subtitle: subtitle, image: image, kind: kind, action: action,
-              size: size, meta: meta.metaProperties, relations: relations)
+  public init(identifier: Int? = nil,
+              title: String = "",
+              subtitle: String = "",
+              text: String = "",
+              image: String = "",
+              kind: StringConvertible = "",
+              action: String? = nil,
+              size: CGSize = CGSize(width: 0, height: 0),
+              meta: Mappable,
+              relations: [String : [Item]] = [:]) {
+    self.init(identifier: identifier,
+              title: title,
+              subtitle: subtitle,
+              text: text,
+              image: image,
+              kind: kind,
+              action: action,
+              size: size,
+              meta: meta.metaProperties,
+              relations: relations)
   }
 
   // MARK: - Helpers
@@ -276,6 +308,7 @@ public func ==(lhs: Item, rhs: Item) -> Bool {
   return lhs.identifier == rhs.identifier &&
     lhs.title == rhs.title &&
     lhs.subtitle == rhs.subtitle &&
+    lhs.text == rhs.text &&
     lhs.image == rhs.image &&
     lhs.kind == rhs.kind &&
     lhs.action == rhs.action &&
@@ -295,6 +328,7 @@ public func ===(lhs: Item, rhs: Item) -> Bool {
   let equal = lhs.identifier == rhs.identifier &&
     lhs.title == rhs.title &&
     lhs.subtitle == rhs.subtitle &&
+    lhs.text == rhs.text &&
     lhs.image == rhs.image &&
     lhs.kind == rhs.kind &&
     lhs.action == rhs.action &&

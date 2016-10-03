@@ -15,6 +15,7 @@ class ItemSpec: QuickSpec {
         data = [
           "title": faker.lorem.paragraph(),
           "subtitle": faker.lorem.paragraph(),
+          "text": faker.lorem.paragraph(),
           "image" : faker.internet.image(),
           "kind" : faker.team.name(),
           "action" : faker.internet.ipV6Address(),
@@ -36,6 +37,7 @@ class ItemSpec: QuickSpec {
         it("sets values") {
           expect(item.title).to(equal(data["title"] as? String))
           expect(item.subtitle).to(equal(data["subtitle"] as? String))
+          expect(item.text).to(equal(data["text"] as? String))
           expect(item.image).to(equal(data["image"] as? String))
           expect(item.kind).to(equal(data["kind"] as? String))
           expect(item.action).to(equal(data["action"] as? String))

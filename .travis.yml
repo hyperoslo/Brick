@@ -12,4 +12,4 @@ script:
 - xcodebuild clean build -project Brick.xcodeproj -scheme Brick-Mac -sdk macosx
 - xcodebuild test -project Brick.xcodeproj -scheme Brick-Mac -sdk macosx
 - xcodebuild clean build -project Brick.xcodeproj -scheme "Brick-tvOS" -destination 'platform=tvOS Simulator,name=Apple TV 1080p,OS=9.2'
-  #- xcodebuild test -project Brick.xcodeproj -scheme "Brick-tvOS" -destination 'platform=tvOS Simulator,name=Apple TV 1080p,OS=9.2'
+- xcodebuild test -project Brick.xcodeproj -scheme "Brick-tvOS" -destination 'platform=tvOS Simulator,name=Apple TV 1080p,OS=9.2'
