@@ -20,6 +20,7 @@ public struct Item: Mappable {
   public var index = 0
   public var title = ""
   public var subtitle = ""
+  public var text = ""
   public var image = ""
   public var kind = ""
   public var action: String?
@@ -34,6 +35,8 @@ Calculated value to determine the index it has inside of the component.
 The headline for your data, in a `UITableViewCell` it is normally used for `textLabel.text` but you are free to use it as you like.
 - **.subtitle**
 Same as for the title, in a `UITableViewCell` it is normally used for `detailTextLabel.text`.
+- **.text**
+This is an optional property that can be used for larger amount of text needed to describe your `Item`
 - **.image**
 Can be either a URL string or a local string, you can easily determine if it should use a local or remote asset in your view.
 - **.kind**
