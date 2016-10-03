@@ -15,6 +15,9 @@
 		BD8070D61D9448830082800B /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8070D31D9448830082800B /* Quick.framework */; };
 		BD8070D71D9448830082800B /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8070D41D9448830082800B /* Nimble.framework */; };
 		BD8070D91D94488E0082800B /* Fakery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8070D81D94488E0082800B /* Fakery.framework */; };
+		BD80D9211DA2AACA00675D5F /* Indexable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD80D9201DA2AACA00675D5F /* Indexable.swift */; };
+		BD80D9221DA2AACA00675D5F /* Indexable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD80D9201DA2AACA00675D5F /* Indexable.swift */; };
+		BD80D9231DA2AACA00675D5F /* Indexable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD80D9201DA2AACA00675D5F /* Indexable.swift */; };
 		BDBA5F221D940F09003A5C6B /* Brick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDFD54221D940EDC003CB98B /* Brick.framework */; };
 		BDDA5FEB1CBBCF45000FD5A6 /* ItemConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDA5FEA1CBBCF45000FD5A6 /* ItemConfigurable.swift */; };
 		BDDA5FEC1CBBCF45000FD5A6 /* ItemConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDA5FEA1CBBCF45000FD5A6 /* ItemConfigurable.swift */; };
@@ -79,6 +82,7 @@
 		BD8070D31D9448830082800B /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/tvOS/Quick.framework; sourceTree = "<group>"; };
 		BD8070D41D9448830082800B /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/tvOS/Nimble.framework; sourceTree = "<group>"; };
 		BD8070D81D94488E0082800B /* Fakery.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fakery.framework; path = Carthage/Build/tvOS/Fakery.framework; sourceTree = "<group>"; };
+		BD80D9201DA2AACA00675D5F /* Indexable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Indexable.swift; sourceTree = "<group>"; };
 		BDBA5F1D1D940F09003A5C6B /* Brick-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Brick-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDDA5FEA1CBBCF45000FD5A6 /* ItemConfigurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemConfigurable.swift; sourceTree = "<group>"; };
 		BDE7D2151D940F7800027CE4 /* Info-tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
@@ -218,6 +222,7 @@
 				BDDA5FEA1CBBCF45000FD5A6 /* ItemConfigurable.swift */,
 				DAA38AA41CBEEAD900D48603 /* StringConvertible.swift */,
 				D5ACAC991CCE439F00567809 /* Extensions.swift */,
+				BD80D9201DA2AACA00675D5F /* Indexable.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -427,7 +432,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Hyper Interaktiv AS";
 				TargetAttributes = {
 					BDBA5F1C1D940F09003A5C6B = {
@@ -631,6 +636,7 @@
 			files = (
 				BDE7D21A1D940FCD00027CE4 /* Item.swift in Sources */,
 				BDE7D21B1D940FCD00027CE4 /* ItemConfigurable.swift in Sources */,
+				BD80D9221DA2AACA00675D5F /* Indexable.swift in Sources */,
 				BDE7D21C1D940FCD00027CE4 /* StringConvertible.swift in Sources */,
 				BDE7D21D1D940FCD00027CE4 /* Extensions.swift in Sources */,
 			);
@@ -642,6 +648,7 @@
 			files = (
 				D5C629871C3A89A8007F7B7C /* Item.swift in Sources */,
 				D5ACAC9A1CCE439F00567809 /* Extensions.swift in Sources */,
+				BD80D9211DA2AACA00675D5F /* Indexable.swift in Sources */,
 				BDDA5FEB1CBBCF45000FD5A6 /* ItemConfigurable.swift in Sources */,
 				DAA38AA51CBEEAD900D48603 /* StringConvertible.swift in Sources */,
 			);
@@ -663,6 +670,7 @@
 			files = (
 				DAA38AA61CBEEAD900D48603 /* StringConvertible.swift in Sources */,
 				D5ACAC9B1CCE439F00567809 /* Extensions.swift in Sources */,
+				BD80D9231DA2AACA00675D5F /* Indexable.swift in Sources */,
 				D5C629881C3A89A8007F7B7C /* Item.swift in Sources */,
 				BDDA5FEC1CBBCF45000FD5A6 /* ItemConfigurable.swift in Sources */,
 			);
@@ -800,8 +808,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -848,8 +858,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -869,6 +881,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -880,6 +893,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -904,6 +918,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
