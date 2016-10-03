@@ -1,8 +1,38 @@
 # Change Log
 
-## [Unreleased](https://github.com/hyperoslo/Brick/tree/HEAD)
+## [1.0.0](https://github.com/hyperoslo/Brick/tree/1.0.0) (2016-10-03)
+[Full Changelog](https://github.com/hyperoslo/Brick/compare/0.9.6...1.0.0)
 
-[Full Changelog](https://github.com/hyperoslo/Brick/compare/0.9.1...HEAD)
+**Merged pull requests:**
+
+- Feature text property [\#21](https://github.com/hyperoslo/Brick/pull/21) ([zenangst](https://github.com/zenangst))
+
+## [0.9.6](https://github.com/hyperoslo/Brick/tree/0.9.6) (2016-09-26)
+[Full Changelog](https://github.com/hyperoslo/Brick/compare/0.9.5...0.9.6)
+
+**Merged pull requests:**
+
+- Rename all references from ViewModel to Item [\#20](https://github.com/hyperoslo/Brick/pull/20) ([zenangst](https://github.com/zenangst))
+
+## [0.9.5](https://github.com/hyperoslo/Brick/tree/0.9.5) (2016-09-22)
+[Full Changelog](https://github.com/hyperoslo/Brick/compare/0.9.4...0.9.5)
+
+## [0.9.4](https://github.com/hyperoslo/Brick/tree/0.9.4) (2016-09-22)
+[Full Changelog](https://github.com/hyperoslo/Brick/compare/0.9.3...0.9.4)
+
+**Merged pull requests:**
+
+- Remove Fakery [\#19](https://github.com/hyperoslo/Brick/pull/19) ([zenangst](https://github.com/zenangst))
+
+## [0.9.3](https://github.com/hyperoslo/Brick/tree/0.9.3) (2016-09-22)
+[Full Changelog](https://github.com/hyperoslo/Brick/compare/0.9.2...0.9.3)
+
+**Merged pull requests:**
+
+- Remove/sugar [\#18](https://github.com/hyperoslo/Brick/pull/18) ([zenangst](https://github.com/zenangst))
+
+## [0.9.2](https://github.com/hyperoslo/Brick/tree/0.9.2) (2016-09-03)
+[Full Changelog](https://github.com/hyperoslo/Brick/compare/0.9.1...0.9.2)
 
 **Merged pull requests:**
 
