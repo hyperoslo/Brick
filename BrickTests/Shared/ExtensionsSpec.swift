@@ -57,11 +57,11 @@ class ExtensionsSpec: QuickSpec {
 
       describe("#metaDictionary") {
         it("returns an array of properties") {
-          var dictionary = ["id": 11, "name": "Name"]
+          var dictionary: [String : Any] = ["id": 11, "name": "Name"]
           var result = item.metaProperties
 
-          expect(result["id"] as? Int).to(equal(dictionary["id"]))
-          expect(result["name"] as? String).to(equal(dictionary["name"]))
+          expect(result["id"] as? Int).to(equal(dictionary["id"] as? Int))
+          expect(result["name"] as? String).to(equal(dictionary["name"] as? String))
         }
       }
     }

@@ -2,11 +2,11 @@ import Tailor
 
 // MARK: - Array
 
-public extension _ArrayType where Iterator.Element == Item {
+public extension Array where Element : Indexable {
 
   mutating func refreshIndexes() {
     enumerated().forEach {
-      self[$0.index].index = $0.index
+      self[$0.offset].index = $0.offset
     }
   }
 }
@@ -53,18 +53,16 @@ extension Mappable {
   /**
    - returns: A key-value dictionary.
    */
-  var metaProperties: [String : AnyObject] {
-    var properties = [String : AnyObject]()
+  var metaProperties: [String : Any] {
+    var properties = [String : Any]()
 
     for tuple in Mirror(reflecting: self).children {
       guard let key = tuple.label else { continue }
 
-      if let value = tuple.value as? AnyObject {
-        properties[key] = value
-      } else if let value = Mirror(reflecting: tuple.value).descendant("Some") as? AnyObject {
+      if let value = Mirror(reflecting: tuple.value).descendant("Some") {
         properties[key] = value
       } else {
-        continue
+        properties[key] = tuple.value
       }
     }
 

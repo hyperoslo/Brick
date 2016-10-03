@@ -8,7 +8,7 @@ class ItemSpec: QuickSpec {
   override func spec() {
     describe("Item") {
       var item: Item!
-      var data: [String : AnyObject]!
+      var data: [String : Any]!
       let faker = Faker()
 
       beforeEach {
@@ -41,7 +41,7 @@ class ItemSpec: QuickSpec {
           expect(item.image).to(equal(data["image"] as? String))
           expect(item.kind).to(equal(data["kind"] as? String))
           expect(item.action).to(equal(data["action"] as? String))
-          expect(item.meta("domain", "")).to(equal(data["meta"]!["domain"]))
+          expect(item.meta("domain", "")).to(equal(((data["meta"] as! [String : AnyObject])["domain"] as? String)))
         }
       }
 
@@ -64,36 +64,36 @@ class ItemSpec: QuickSpec {
           expect(item.relations["Items"]!.last!.action).to(equal(data["action"] as? String))
 
           let item2 = item
-          expect(item == item2).to(beTrue())
+          expect(item == item2!).to(beTrue())
 
           item.relations["Items"]![2].title = "new"
-          expect(item == item2).to(beFalse())
+          expect(item == item2!).to(beFalse())
         }
       }
 
       describe("#meta") {
         it("resolves meta data created from JSON") {
           item = Item(data)
-          expect(item.meta("domain", "")).to(equal(data["meta"]!["domain"]))
+          expect(item.meta("domain", "")).to(equal((data["meta"] as! [String : AnyObject])["domain"] as? String))
         }
 
         it("resolves meta data created from object") {
-          var data = ["id": 11, "name": "Name"]
+          var data: [String : Any] = ["id": 11, "name": "Name"]
 
           item = Item(meta: Meta(data))
-          expect(item.meta("id", 0)).to(equal(data["id"]))
-          expect(item.meta("name", "")).to(equal(data["name"]))
+          expect(item.meta("id", 0)).to(equal(data["id"] as? Int))
+          expect(item.meta("name", "")).to(equal(data["name"] as? String))
         }
       }
 
       describe("#metaInstance") {
         it("resolves meta data created from object") {
-          var data = ["id": 11, "name": "Name"]
+          var data: [String : Any] = ["id": 11, "name": "Name"]
           item = Item(meta: Meta(data))
           let result: Meta = item.metaInstance()
 
-          expect(result.id).to(equal(data["id"]))
-          expect(result.name).to(equal(data["name"]))
+          expect(result.id).to(equal(data["id"] as? Int))
+          expect(result.name).to(equal(data["name"] as? String))
         }
       }
 
