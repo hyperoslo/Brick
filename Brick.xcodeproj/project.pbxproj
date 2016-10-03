@@ -721,6 +721,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zenangst.Brick-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
 			};
@@ -740,6 +741,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zenangst.Brick-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
 			};
@@ -1039,6 +1041,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "no.hyper.Brick-MacTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1057,6 +1060,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "no.hyper.Brick-MacTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
