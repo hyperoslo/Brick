@@ -13,3 +13,6 @@ script:
 - xcodebuild test -project Brick.xcodeproj -scheme Brick-Mac -sdk macosx
 - xcodebuild clean build -project Brick.xcodeproj -scheme "Brick-tvOS" -destination 'platform=tvOS Simulator,name=Apple TV 1080p,OS=10.0'
 - xcodebuild test -project Brick.xcodeproj -scheme "Brick-tvOS" -destination 'platform=tvOS Simulator,name=Apple TV 1080p,OS=10.0'
+
+notifications:
+  email: false
