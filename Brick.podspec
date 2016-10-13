@@ -21,4 +21,6 @@ Pod::Spec.new do |s|
   s.tvos.source_files = 'Sources/{iOS,Shared}/**/*'
 
   s.dependency 'Tailor', '~> 2.0'
+  
+  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '3.0' }
 end
