@@ -6,7 +6,7 @@
 [![License](https://img.shields.io/cocoapods/l/Brick.svg?style=flat)](http://cocoadocs.org/docsets/Brick)
 [![Platform](https://img.shields.io/cocoapods/p/Brick.svg?style=flat)](http://cocoadocs.org/docsets/Brick)
 [![Documentation](https://img.shields.io/cocoapods/metrics/doc-percent/Brick.svg?style=flat)](http://cocoadocs.org/docsets/Brick)
-![Swift](https://img.shields.io/badge/%20in-swift%202.2-orange.svg)
+![Swift](https://img.shields.io/badge/%20in-swift%203.0-orange.svg)
 
 ## Description
 
