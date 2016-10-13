@@ -1,4 +1,4 @@
-osx_image: xcode7.3
+osx_image: xcode8
 language: objective-c
 
 before_install:
@@ -7,9 +7,12 @@ before_install:
 - travis_wait 35 carthage bootstrap --platform iOS,Mac,tvOS
 
 script:
-- xcodebuild clean build -project Brick.xcodeproj -scheme Brick-iOS -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6,OS=9.3'
-- xcodebuild test -project Brick.xcodeproj -scheme Brick-iOS -sdk iphonesimulator
+- xcodebuild clean build -project Brick.xcodeproj -scheme Brick-iOS -sdk iphonesimulator
+- xcodebuild test -project Brick.xcodeproj -scheme Brick-iOS -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6,OS=10.0'
 - xcodebuild clean build -project Brick.xcodeproj -scheme Brick-Mac -sdk macosx
 - xcodebuild test -project Brick.xcodeproj -scheme Brick-Mac -sdk macosx
-- xcodebuild clean build -project Brick.xcodeproj -scheme "Brick-tvOS" -destination 'platform=tvOS Simulator,name=Apple TV 1080p,OS=9.2'
-- xcodebuild test -project Brick.xcodeproj -scheme "Brick-tvOS" -destination 'platform=tvOS Simulator,name=Apple TV 1080p,OS=9.2'
+- xcodebuild clean build -project Brick.xcodeproj -scheme "Brick-tvOS" -destination 'platform=tvOS Simulator,name=Apple TV 1080p,OS=10.0'
+- xcodebuild test -project Brick.xcodeproj -scheme "Brick-tvOS" -destination 'platform=tvOS Simulator,name=Apple TV 1080p,OS=10.0'
+
+notifications:
+  email: false
