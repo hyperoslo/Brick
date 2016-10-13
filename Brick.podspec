@@ -20,5 +20,5 @@ Pod::Spec.new do |s|
   s.osx.source_files = 'Sources/{Mac,Shared}/**/*'
   s.tvos.source_files = 'Sources/{iOS,Shared}/**/*'
 
-  s.dependency 'Tailor'
+  s.dependency 'Tailor', '~> 2.0'
 end
