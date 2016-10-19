@@ -18,6 +18,7 @@ class ItemSpec: QuickSpec {
           "text": faker.lorem.paragraph(),
           "image" : faker.internet.image(),
           "kind" : faker.team.name(),
+          "size" : ["width" : 320.0, "height" : 240.0],
           "action" : faker.internet.ipV6Address(),
           "meta" : [
             "domain" : faker.internet.domainName()
@@ -41,6 +42,8 @@ class ItemSpec: QuickSpec {
           expect(item.image).to(equal(data["image"] as? String))
           expect(item.kind).to(equal(data["kind"] as? String))
           expect(item.action).to(equal(data["action"] as? String))
+          expect(item.size.width).to(equal(CGFloat(320.0)))
+          expect(item.size.height).to(equal(CGFloat(240.0)))
           expect(item.meta("domain", "")).to(equal(((data["meta"] as! [String : AnyObject])["domain"] as? String)))
         }
       }
