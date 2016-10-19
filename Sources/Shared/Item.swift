@@ -134,10 +134,9 @@ public struct Item: Mappable, Indexable {
       }
     }
 
-    size = CGSize(
-      width:  ((map[.Size] as? [String : Any])?[.Width] as? Int) ?? 0,
-      height: ((map[.Size] as? [String : Any])?[.Height] as? Int) ?? 0
-    )
+    let width: Double = map.resolve(keyPath: "size.width") ?? 0.0
+    let height: Double = map.resolve(keyPath: "size.height") ?? 0.0
+    size = CGSize(width: width, height: height)
   }
 
   /**
