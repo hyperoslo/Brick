@@ -66,8 +66,8 @@ public struct Item: Mappable, Indexable {
       Key.Index.string : index,
       Key.Kind.string : kind,
       Key.Size.string : [
-        Key.Width.string : size.width,
-        Key.Height.string : size.height
+        Key.Width.string : Double(size.width),
+        Key.Height.string : Double(size.height)
       ]
     ]
 
