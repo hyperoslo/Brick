@@ -1,5 +1,28 @@
 # Change Log
 
+## [Unreleased](https://github.com/hyperoslo/Brick/tree/HEAD)
+
+[Full Changelog](https://github.com/hyperoslo/Brick/compare/2.0.1...HEAD)
+
+**Merged pull requests:**
+
+- Check if there are any children when before creating the key [\#25](https://github.com/hyperoslo/Brick/pull/25) ([zenangst](https://github.com/zenangst))
+
+## [2.0.1](https://github.com/hyperoslo/Brick/tree/2.0.1) (2016-10-19)
+[Full Changelog](https://github.com/hyperoslo/Brick/compare/2.0.0...2.0.1)
+
+**Merged pull requests:**
+
+- Fix size type in json dictionary [\#24](https://github.com/hyperoslo/Brick/pull/24) ([vadymmarkov](https://github.com/vadymmarkov))
+- Fix/mapping size [\#23](https://github.com/hyperoslo/Brick/pull/23) ([zenangst](https://github.com/zenangst))
+
+## [2.0.0](https://github.com/hyperoslo/Brick/tree/2.0.0) (2016-10-13)
+[Full Changelog](https://github.com/hyperoslo/Brick/compare/1.0.0...2.0.0)
+
+**Merged pull requests:**
+
+- Migrate to Swift 3 [\#22](https://github.com/hyperoslo/Brick/pull/22) ([zenangst](https://github.com/zenangst))
+
 ## [1.0.0](https://github.com/hyperoslo/Brick/tree/1.0.0) (2016-10-03)
 [Full Changelog](https://github.com/hyperoslo/Brick/compare/0.9.6...1.0.0)
 
