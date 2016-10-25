@@ -85,7 +85,9 @@ public struct Item: Mappable, Indexable {
       dictionary[Key.Action.string] = action
     }
 
-    dictionary[Key.Children.string] = children
+    if !children.isEmpty {
+      dictionary[Key.Children.string] = children
+    }
 
     var relationItems = [String : [[String : Any]]]()
 
