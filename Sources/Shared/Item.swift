@@ -36,17 +36,17 @@ public struct Item: Mappable, Indexable {
   }
 
   /// The index of the Item when appearing in a list, should be computed and continuously updated by the data source
-  public var index = 0
+  public var index: Int = 0
   /// An optional identifier for your data
   public var identifier: Int?
   /// The main representation of the Item
-  public var title = ""
+  public var title: String = ""
   /// Supplementary information to the Item
-  public var subtitle = ""
+  public var subtitle: String = ""
   /// An Optional text property for a more in-depth description of your Item
-  public var text = ""
+  public var text: String = ""
   /// A visual representation of the Item, usually a string URL or image name
-  public var image = ""
+  public var image: String = ""
   /// Determines what kind of UI should be used to represent the Item
   public var kind: String = ""
   /// A string representation of what should happens when a Item is tapped, usually a URN or URL
