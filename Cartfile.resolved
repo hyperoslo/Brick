@@ -1,4 +1,4 @@
 github "vadymmarkov/Fakery" "2.0.0"
 github "Quick/Nimble" "v5.0.0"
 github "Quick/Quick" "v0.10.0"
-github "zenangst/Tailor" "2.0.0"
+github "zenangst/Tailor" "2.0.2"
