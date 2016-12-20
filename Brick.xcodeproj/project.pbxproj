@@ -220,12 +220,12 @@
 		D5C6296E1C3A809D007F7B7C /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				BDDB1A531E09AF7300DFF834 /* DictionaryConvertable.swift */,
+				D5ACAC991CCE439F00567809 /* Extensions.swift */,
+				BD80D9201DA2AACA00675D5F /* Indexable.swift */,
 				D5C629861C3A89A8007F7B7C /* Item.swift */,
 				BDDA5FEA1CBBCF45000FD5A6 /* ItemConfigurable.swift */,
 				DAA38AA41CBEEAD900D48603 /* StringConvertible.swift */,
-				D5ACAC991CCE439F00567809 /* Extensions.swift */,
-				BD80D9201DA2AACA00675D5F /* Indexable.swift */,
-				BDDB1A531E09AF7300DFF834 /* DictionaryConvertable.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
