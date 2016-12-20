@@ -157,6 +157,7 @@ public struct Item: Mappable, Indexable {
               action: String? = nil,
               size: CGSize = CGSize(width: 0, height: 0),
               meta: [String : Any] = [:],
+              children: [DictionaryConvertible] = [],
               relations: [String : [Item]] = [:]) {
     self.identifier = identifier
     self.title = title
@@ -167,6 +168,7 @@ public struct Item: Mappable, Indexable {
     self.action = action
     self.size = size
     self.meta = meta
+    self.children = children.map { $0.dictionary }
     self.relations = relations
   }
 
