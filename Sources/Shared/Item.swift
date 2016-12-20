@@ -335,6 +335,7 @@ public func ===(lhs: Item, rhs: Item) -> Bool {
     lhs.kind == rhs.kind &&
     lhs.action == rhs.action &&
     lhs.size == rhs.size &&
+    (lhs.children as NSArray).isEqual(to: rhs.children) &&
     (lhs.meta as NSDictionary).isEqual(to: rhs.meta) &&
     compareRelations(lhs, rhs)
 
