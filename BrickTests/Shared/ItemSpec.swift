@@ -20,6 +20,10 @@ class ItemSpec: QuickSpec {
           "kind" : faker.team.name(),
           "size" : ["width" : 320.0, "height" : 240.0],
           "action" : faker.internet.ipV6Address(),
+          "children" : [
+            "child 1" : "Anna",
+            "child 2" : "Elsa"
+          ],
           "meta" : [
             "domain" : faker.internet.domainName()
           ]
@@ -182,6 +186,23 @@ class ItemSpec: QuickSpec {
         it("updates kind") {
           item.update(kind: "test")
           expect(item.kind).to(equal("test"))
+        }
+      }
+
+      describe("#compareChildren") {
+        beforeEach {
+          item = Item(data)
+        }
+
+        it("compare children properly") {
+          let sameItem = Item(data)
+
+          var newData: [String : Any] = data!
+          newData["children"] = [["child 1" : "Anna"]]
+          let otherItem = Item(newData)
+
+          expect(item === sameItem).to(beTrue())
+          expect(item === otherItem).to(beFalse())
         }
       }
 

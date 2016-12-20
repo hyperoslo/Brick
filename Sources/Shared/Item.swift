@@ -9,7 +9,7 @@ import Tailor
 /**
  A value type struct, it conforms to the Mappable protocol so that it can be instantiated with JSON
  */
-public struct Item: Mappable, Indexable {
+public struct Item: Mappable, Indexable, DictionaryConvertible {
 
   /**
    An enum with all the string keys used in the view model
@@ -157,6 +157,7 @@ public struct Item: Mappable, Indexable {
               action: String? = nil,
               size: CGSize = CGSize(width: 0, height: 0),
               meta: [String : Any] = [:],
+              children: [DictionaryConvertible] = [],
               relations: [String : [Item]] = [:]) {
     self.identifier = identifier
     self.title = title
@@ -167,6 +168,7 @@ public struct Item: Mappable, Indexable {
     self.action = action
     self.size = size
     self.meta = meta
+    self.children = children.map { $0.dictionary }
     self.relations = relations
   }
 
@@ -333,6 +335,7 @@ public func ===(lhs: Item, rhs: Item) -> Bool {
     lhs.kind == rhs.kind &&
     lhs.action == rhs.action &&
     lhs.size == rhs.size &&
+    (lhs.children as NSArray).isEqual(to: rhs.children) &&
     (lhs.meta as NSDictionary).isEqual(to: rhs.meta) &&
     compareRelations(lhs, rhs)
 
