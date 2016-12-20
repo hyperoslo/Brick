@@ -9,7 +9,7 @@ import Tailor
 /**
  A value type struct, it conforms to the Mappable protocol so that it can be instantiated with JSON
  */
-public struct Item: Mappable, Indexable {
+public struct Item: Mappable, Indexable, DictionaryConvertible {
 
   /**
    An enum with all the string keys used in the view model
