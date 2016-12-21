@@ -319,6 +319,17 @@ public func ==(lhs: Item, rhs: Item) -> Bool {
 }
 
 /**
+ Item Equatable implementation
+ - parameter lhs: Left hand Item
+ - parameter rhs: Right hand Item
+
+ - returns: A boolean value, true if both Item are not equal
+ */
+public func != (lhs: [Item], rhs: [Item]) -> Bool {
+  return !(lhs == rhs)
+}
+
+/**
  Check if Item's are truly equal by including size in comparison
 
  - parameter lhs: Left hand Item
@@ -340,6 +351,16 @@ public func ===(lhs: Item, rhs: Item) -> Bool {
     compareRelations(lhs, rhs)
 
   return equal
+}
+
+/**
+ A collection of Item Equatable implementation to see if they are truly not equal
+ - parameter lhs: Left hand collection of Items
+ - parameter rhs: Right hand collection of Items
+ - returns: A boolean value, true if both Item are not equal
+ */
+public func !== (lhs: [Item], rhs: [Item]) -> Bool {
+  return !(lhs === rhs)
 }
 
 /**
