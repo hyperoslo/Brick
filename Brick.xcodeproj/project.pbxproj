@@ -22,6 +22,8 @@
 		BDDA5FEB1CBBCF45000FD5A6 /* ItemConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDA5FEA1CBBCF45000FD5A6 /* ItemConfigurable.swift */; };
 		BDDA5FEC1CBBCF45000FD5A6 /* ItemConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDA5FEA1CBBCF45000FD5A6 /* ItemConfigurable.swift */; };
 		BDDB1A541E09AF7300DFF834 /* DictionaryConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDB1A531E09AF7300DFF834 /* DictionaryConvertable.swift */; };
+		BDDB1A551E0A701900DFF834 /* DictionaryConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDB1A531E09AF7300DFF834 /* DictionaryConvertable.swift */; };
+		BDDB1A561E0A701900DFF834 /* DictionaryConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDB1A531E09AF7300DFF834 /* DictionaryConvertable.swift */; };
 		BDE7D2171D940FC300027CE4 /* ItemSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C629971C3A8BDA007F7B7C /* ItemSpec.swift */; };
 		BDE7D2181D940FC300027CE4 /* ExtensionsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ACAC9C1CCE449A00567809 /* ExtensionsSpec.swift */; };
 		BDE7D2191D940FC300027CE4 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57832961CE142C8005ED144 /* Helpers.swift */; };
@@ -638,6 +640,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDE7D21A1D940FCD00027CE4 /* Item.swift in Sources */,
+				BDDB1A551E0A701900DFF834 /* DictionaryConvertable.swift in Sources */,
 				BDE7D21B1D940FCD00027CE4 /* ItemConfigurable.swift in Sources */,
 				BD80D9221DA2AACA00675D5F /* Indexable.swift in Sources */,
 				BDE7D21C1D940FCD00027CE4 /* StringConvertible.swift in Sources */,
@@ -673,6 +676,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAA38AA61CBEEAD900D48603 /* StringConvertible.swift in Sources */,
+				BDDB1A561E0A701900DFF834 /* DictionaryConvertable.swift in Sources */,
 				D5ACAC9B1CCE439F00567809 /* Extensions.swift in Sources */,
 				BD80D9231DA2AACA00675D5F /* Indexable.swift in Sources */,
 				D5C629881C3A89A8007F7B7C /* Item.swift in Sources */,
