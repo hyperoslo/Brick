@@ -49,7 +49,7 @@ public struct Item: Mappable, Indexable, DictionaryConvertible {
   public var image: String = ""
   /// Determines what kind of UI should be used to represent the Item
   public var kind: String = ""
-  /// A string representation of what should happens when a Item is tapped, usually a URN or URL
+  /// A string representation of what should happen when a Item is tapped, usually a URN or URL
   public var action: String?
   /// The width and height of the view model, usually calculated and updated by the UI component
   public var size = CGSize(width: 0, height: 0)

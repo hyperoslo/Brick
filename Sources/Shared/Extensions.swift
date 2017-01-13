@@ -14,7 +14,7 @@ public extension Array where Element : Indexable {
 // MARK: - Dictionary
 
 /**
- A dictinary extension to work with custom Key type
+ A dictionary extension to work with custom Key type
  */
 extension Dictionary where Key: ExpressibleByStringLiteral {
 
